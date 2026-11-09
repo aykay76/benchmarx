@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team chat example — WDS</title>
+  <script>
+    const t = localStorage.getItem("wds-theme");
+    if (t) document.documentElement.setAttribute("data-wds-theme", t);
+  </script>
+  <link rel="stylesheet" href="../../wds.css" />
+  <link rel="stylesheet" href="./chat.css" />
+  <script type="module" src="../../wds.js"></script>
+</head>
+<body>
+  <div class="chat-shell">
+    <div class="chat-server-rail">
+      <button class="chat-server-btn active" data-wds-tooltip="Acme HQ" data-wds-tooltip-placement="right">AC</button>
+      <button class="chat-server-btn" data-wds-tooltip="Design Guild" data-wds-tooltip-placement="right">DG</button>
+      <button class="chat-server-btn" data-wds-tooltip="Open Source" data-wds-tooltip-placement="right">OS</button>
+      <div class="chat-server-divider"></div>
+      <button class="chat-server-btn" data-wds-tooltip="Add a server" data-wds-tooltip-placement="right">
+        <wds-icon name="plus" size="18"></wds-icon>
+      </button>
+    </div>
+
+    <div class="chat-channel-sidebar">
+      <div class="chat-channel-header">
+        Acme HQ
+        <wds-icon name="chevron-down" size="14"></wds-icon>
+      </div>
+      <div class="chat-channel-list">
+        <div class="chat-channel-group-label">Text channels</div>
+        <a class="chat-channel-link" href="#" data-channel="general" aria-current="page">
+          <wds-icon name="menu" size="14"></wds-icon> general
+        </a>
+        <a class="chat-channel-link" href="#" data-channel="random">
+          <wds-icon name="menu" size="14"></wds-icon> random
+        </a>
+        <a class="chat-channel-link" href="#" data-channel="engineering">
+          <wds-icon name="menu" size="14"></wds-icon> engineering
+        </a>
+        <div class="chat-channel-group-label">Voice channels</div>
+        <a class="chat-channel-link" href="#">
+          <wds-icon name="user" size="14"></wds-icon> Lounge
+        </a>
+      </div>
+      <div class="chat-user-bar">
+        <span class="wds-avatar wds-avatar--sm">YO</span>
+        <span class="chat-user-bar-name">
+          <span class="wds-font-medium">You</span>
+          <small>#0142</small>
+        </span>
+        <span class="chat-user-bar-actions">
+          <button class="wds-btn wds-btn--ghost wds-btn--icon wds-btn--sm" data-wds-tooltip="Settings">
+            <wds-icon name="settings" size="14"></wds-icon>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="chat-main">
+      <div class="chat-header">
+        <wds-icon name="menu" size="16"></wds-icon>
+        <strong id="channel-title">general</strong>
+        <span class="chat-header-topic" id="channel-topic">Company-wide announcements and chat</span>
+        <div class="chat-header-actions">
+          <button class="wds-btn wds-btn--ghost wds-btn--icon wds-btn--sm" data-wds-tooltip="Search">
+            <wds-icon name="search" size="14"></wds-icon>
+          </button>
+          <button class="wds-btn wds-btn--ghost wds-btn--icon wds-btn--sm" id="toggle-members" data-wds-tooltip="Members">
+            <wds-icon name="user" size="14"></wds-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="message-list"></div>
+
+      <div class="chat-composer">
+        <form class="chat-composer-inner" id="composer-form">
+          <button class="wds-btn wds-btn--ghost wds-btn--icon wds-btn--sm" type="button" data-wds-tooltip="Attach a file">
+            <wds-icon name="upload" size="16"></wds-icon>
+          </button>
+          <input class="chat-composer-input" id="composer-input" placeholder="Message #general" autocomplete="off" />
+          <button class="wds-btn wds-btn--ghost wds-btn--icon wds-btn--sm" type="submit" data-wds-tooltip="Send">
+            <wds-icon name="arrow-up-right" size="16"></wds-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <aside class="chat-member-sidebar" id="member-sidebar">
+      <div class="chat-member-group-label">Online — 4</div>
+      <div class="chat-member">
+        <span class="wds-avatar wds-avatar--sm">JD<span class="wds-avatar-status wds-avatar-status--online"></span></span>
+        Jamie Diaz
+      </div>
+      <div class="chat-member">
+        <span class="wds-avatar wds-avatar--sm">AK<span class="wds-avatar-status wds-avatar-status--online"></span></span>
+        Alex Kim
+      </div>
+      <div class="chat-member">
+        <span class="wds-avatar wds-avatar--sm">RP<span class="wds-avatar-status wds-avatar-status--away"></span></span>
+        Riya Patel
+      </div>
+      <div class="chat-member">
+        <span class="wds-avatar wds-avatar--sm">YO<span class="wds-avatar-status wds-avatar-status--online"></span></span>
+        You
+      </div>
+      <div class="chat-member-group-label">Offline — 2</div>
+      <div class="chat-member chat-member--offline">
+        <span class="wds-avatar wds-avatar--sm">TN<span class="wds-avatar-status wds-avatar-status--offline"></span></span>
+        Tom Nilsson
+      </div>
+      <div class="chat-member chat-member--offline">
+        <span class="wds-avatar wds-avatar--sm">SL<span class="wds-avatar-status wds-avatar-status--offline"></span></span>
+        Sam Lee
+      </div>
+    </aside>
+  </div>
+
+  <script type="module" src="./chat.js"></script>
+</body>
+</html>

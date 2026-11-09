@@ -1,0 +1,66 @@
+/* WDS Accordion — grid-rows expand/collapse trick, no JS height measuring needed */
+
+wds-accordion {
+  display: block;
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-lg);
+  overflow: hidden;
+  background: var(--wds-surface);
+}
+
+wds-accordion-item {
+  display: block;
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+}
+
+wds-accordion-item:last-child {
+  border-bottom: 0;
+}
+
+.wds-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wds-space-sm);
+  padding: var(--wds-space-sm) var(--wds-space-md);
+  background: var(--wds-surface);
+  font-size: var(--wds-text-sm);
+  font-weight: var(--wds-font-weight-medium);
+  text-align: left;
+  cursor: pointer;
+}
+
+.wds-accordion-trigger:hover {
+  background: var(--wds-surface-sunken);
+}
+
+.wds-accordion-trigger .wds-accordion-chevron {
+  flex: none;
+  color: var(--wds-text-muted);
+  transition: transform var(--wds-duration-base) var(--wds-ease);
+}
+
+.wds-accordion-trigger[aria-expanded="true"] .wds-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.wds-accordion-panel-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--wds-duration-base) var(--wds-ease);
+}
+
+.wds-accordion-panel-wrapper.is-open {
+  grid-template-rows: 1fr;
+}
+
+.wds-accordion-panel {
+  overflow: hidden;
+}
+
+.wds-accordion-panel-inner {
+  padding: 0 var(--wds-space-md) var(--wds-space-md);
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}

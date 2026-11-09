@@ -1,0 +1,101 @@
+/* WDS Resource Panel — the standard "detail view" shell: heading + status +
+   Edit/overflow actions in the header, arbitrary content in the body, a
+   meta footer (created/updated by). Pair with .wds-detail-list for fields. */
+
+wds-resource-panel {
+  display: block;
+  background: var(--wds-surface);
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-lg);
+  box-shadow: var(--wds-shadow-sm);
+  overflow: hidden;
+}
+
+.wds-resource-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--wds-space-md);
+  padding: var(--wds-space-md) var(--wds-space-lg);
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+}
+
+.wds-resource-panel-heading-group {
+  min-width: 0;
+}
+
+.wds-resource-panel-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+}
+
+.wds-resource-panel-title {
+  font-size: var(--wds-text-lg);
+  font-weight: var(--wds-font-weight-semibold);
+  color: var(--wds-text);
+}
+
+.wds-resource-panel-subheading {
+  margin-top: 2px;
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}
+
+.wds-resource-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-2xs);
+  flex: none;
+}
+
+.wds-resource-panel-body {
+  padding: var(--wds-space-lg);
+}
+
+.wds-resource-panel-footer {
+  padding: var(--wds-space-sm) var(--wds-space-lg);
+  border-top: var(--wds-border-width) solid var(--wds-border);
+  background: var(--wds-surface-sunken);
+  font-size: var(--wds-text-xs);
+  color: var(--wds-text-muted);
+}
+
+.wds-resource-panel-footer:empty {
+  display: none;
+}
+
+/* Detail list — label/value rows used inside the panel body */
+.wds-detail-list {
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) 1fr;
+  row-gap: var(--wds-space-sm);
+  column-gap: var(--wds-space-md);
+}
+
+.wds-detail-row {
+  display: contents;
+}
+
+.wds-detail-row dt {
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}
+
+.wds-detail-row dd {
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text);
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .wds-detail-list {
+    grid-template-columns: 1fr;
+    row-gap: var(--wds-space-2xs);
+  }
+  .wds-detail-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--wds-space-xs);
+  }
+}

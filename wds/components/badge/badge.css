@@ -1,0 +1,60 @@
+/* WDS Badge — status/tag labels used in tables, resource panels, lists */
+
+.wds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wds-space-3xs);
+  height: 20px;
+  padding-inline: var(--wds-space-xs);
+  border-radius: var(--wds-radius-full);
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  background: var(--wds-surface-sunken);
+  color: var(--wds-text-muted);
+  border: var(--wds-border-width) solid var(--wds-border);
+}
+
+.wds-badge--neutral {
+  background: var(--wds-surface-sunken);
+  color: var(--wds-text-muted);
+  border-color: var(--wds-border);
+}
+
+.wds-badge--success {
+  background: var(--wds-success-subtle);
+  color: var(--wds-success);
+  border-color: transparent;
+}
+
+.wds-badge--warning {
+  background: var(--wds-warning-subtle);
+  color: var(--wds-warning);
+  border-color: transparent;
+}
+
+.wds-badge--danger {
+  background: var(--wds-danger-subtle);
+  color: var(--wds-danger);
+  border-color: transparent;
+}
+
+.wds-badge--info {
+  background: var(--wds-info-subtle);
+  color: var(--wds-info);
+  border-color: transparent;
+}
+
+.wds-badge--brand {
+  background: var(--wds-primary-subtle);
+  color: var(--wds-primary);
+  border-color: var(--wds-primary-subtle-border);
+}
+
+.wds-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}

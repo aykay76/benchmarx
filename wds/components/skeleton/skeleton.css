@@ -1,0 +1,37 @@
+/* WDS Skeleton — shimmer placeholders for loading states */
+
+.wds-skeleton {
+  position: relative;
+  display: block;
+  background: var(--wds-surface-sunken);
+  border-radius: var(--wds-radius-sm);
+  overflow: hidden;
+}
+
+.wds-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 35%), transparent);
+  animation: wds-shimmer 1.4s infinite;
+}
+
+:root[data-wds-theme="dark"] .wds-skeleton::after {
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 8%), transparent);
+}
+
+@keyframes wds-shimmer {
+  100% { transform: translateX(100%); }
+}
+
+.wds-skeleton-text { height: 12px; width: 100%; margin-bottom: var(--wds-space-2xs); }
+.wds-skeleton-title { height: 18px; width: 40%; }
+.wds-skeleton-avatar { width: 32px; height: 32px; border-radius: 50%; }
+.wds-skeleton-block { height: 80px; width: 100%; border-radius: var(--wds-radius-md); }
+
+@media (prefers-reduced-motion: reduce) {
+  .wds-skeleton::after {
+    animation: none;
+  }
+}

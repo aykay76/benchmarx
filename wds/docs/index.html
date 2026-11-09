@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WDS — Web Design System</title>
+  <link rel="stylesheet" href="../wds.css" />
+  <link rel="stylesheet" href="./docs.css" />
+</head>
+<body>
+  <div class="wds-app-shell" id="shell">
+    <nav class="wds-navbar">
+      <button class="wds-sidenav-toggle wds-btn wds-btn--ghost wds-btn--icon" data-wds-nav-toggle aria-label="Toggle navigation">
+        <wds-icon name="menu"></wds-icon>
+      </button>
+      <div class="wds-navbar-brand"><wds-icon name="home"></wds-icon> WDS</div>
+      <div class="wds-navbar-spacer"></div>
+      <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" data-wds-tooltip="Toggle theme">
+        <wds-icon name="settings"></wds-icon>
+      </button>
+    </nav>
+
+    <aside class="wds-sidenav">
+      <div>
+        <div class="wds-sidenav-group-label">Foundations</div>
+        <a class="wds-sidenav-link" href="#colors"><wds-icon name="info" size="15"></wds-icon>Colors</a>
+        <a class="wds-sidenav-link" href="#type"><wds-icon name="file" size="15"></wds-icon>Typography</a>
+      </div>
+      <div>
+        <div class="wds-sidenav-group-label">Actions</div>
+        <a class="wds-sidenav-link" href="#buttons"><wds-icon name="plus" size="15"></wds-icon>Buttons</a>
+        <a class="wds-sidenav-link" href="#forms"><wds-icon name="edit" size="15"></wds-icon>Forms</a>
+        <a class="wds-sidenav-link" href="#menu"><wds-icon name="more-horizontal" size="15"></wds-icon>Menu</a>
+      </div>
+      <div>
+        <div class="wds-sidenav-group-label">Feedback</div>
+        <a class="wds-sidenav-link" href="#badges"><wds-icon name="check-circle" size="15"></wds-icon>Badges &amp; Avatars</a>
+        <a class="wds-sidenav-link" href="#toast"><wds-icon name="bell" size="15"></wds-icon>Toast</a>
+        <a class="wds-sidenav-link" href="#modal"><wds-icon name="external-link" size="15"></wds-icon>Modal &amp; Drawer</a>
+        <a class="wds-sidenav-link" href="#empty"><wds-icon name="folder" size="15"></wds-icon>Empty &amp; Skeleton</a>
+      </div>
+      <div>
+        <div class="wds-sidenav-group-label">Data</div>
+        <a class="wds-sidenav-link" href="#cards"><wds-icon name="home" size="15"></wds-icon>Cards &amp; Stats</a>
+        <a class="wds-sidenav-link" href="#lists"><wds-icon name="menu" size="15"></wds-icon>Lists</a>
+        <a class="wds-sidenav-link" href="#tables"><wds-icon name="filter" size="15"></wds-icon>Tables</a>
+        <a class="wds-sidenav-link" href="#tree"><wds-icon name="folder" size="15"></wds-icon>Tree</a>
+        <a class="wds-sidenav-link" href="#accordion-tabs"><wds-icon name="chevron-down" size="15"></wds-icon>Accordion &amp; Tabs</a>
+      </div>
+      <div>
+        <div class="wds-sidenav-group-label">Structure</div>
+        <a class="wds-sidenav-link" href="#nav" aria-current="page"><wds-icon name="home" size="15"></wds-icon>Navigation</a>
+        <a class="wds-sidenav-link" href="#resource-panel"><wds-icon name="file" size="15"></wds-icon>Resource Panel</a>
+      </div>
+    </aside>
+
+    <main class="wds-app-main">
+      <div class="wds-container" style="max-width: 960px; padding-inline: 0;">
+        <h1>WDS — Web Design System</h1>
+        <p class="wds-text-muted wds-mb-lg">
+          Vanilla HTML/CSS/JS component library — copy the <code>wds/</code> folder into any project, add
+          <code>wds.css</code> + <code>wds.js</code>, and build consistent screens. No build step, no framework.
+        </p>
+
+        <section class="docs-section" id="colors">
+          <h2 class="docs-section-title">Colors</h2>
+          <p class="docs-section-desc">Semantic tokens — never use raw hex values or the <code>--wds-neutral-*</code> / <code>--wds-brand-*</code> scales directly in components.</p>
+          <div class="docs-swatch-grid">
+            <div class="docs-swatch"><div class="docs-swatch-color" style="background:var(--wds-primary)"></div><span class="docs-swatch-label">--wds-primary</span></div>
+            <div class="docs-swatch"><div class="docs-swatch-color" style="background:var(--wds-success)"></div><span class="docs-swatch-label">--wds-success</span></div>
+            <div class="docs-swatch"><div class="docs-swatch-color" style="background:var(--wds-warning)"></div><span class="docs-swatch-label">--wds-warning</span></div>
+            <div class="docs-swatch"><div class="docs-swatch-color" style="background:var(--wds-danger)"></div><span class="docs-swatch-label">--wds-danger</span></div>
+            <div class="docs-swatch"><div class="docs-swatch-color" style="background:var(--wds-info)"></div><span class="docs-swatch-label">--wds-info</span></div>
+            <div class="docs-swatch"><div class="docs-swatch-color" style="background:var(--wds-surface-sunken)"></div><span class="docs-swatch-label">--wds-surface-sunken</span></div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="type">
+          <h2 class="docs-section-title">Typography</h2>
+          <div class="docs-demo wds-flex-col wds-items-start">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <p>Body text uses <code>--wds-text-base</code> (14px) with the system font stack.</p>
+            <small>Small / muted text for meta information.</small>
+          </div>
+        </section>
+
+        <section class="docs-section" id="buttons">
+          <h2 class="docs-section-title">Buttons</h2>
+          <div class="docs-demo">
+            <button class="wds-btn wds-btn--primary">Primary</button>
+            <a class="wds-btn wds-btn--primary" href="#buttons">Primary link</a>
+            <a class="wds-btn wds-btn--secondary" href="#buttons">Secondary link</a>
+            <button class="wds-btn wds-btn--secondary">Secondary</button>
+            <button class="wds-btn wds-btn--ghost">Ghost</button>
+            <button class="wds-btn wds-btn--danger">Danger</button>
+            <button class="wds-btn wds-btn--danger-ghost">Danger ghost</button>
+            <button class="wds-btn wds-btn--secondary wds-btn--sm">Small</button>
+            <button class="wds-btn wds-btn--primary wds-btn--lg">Large</button>
+            <button class="wds-btn wds-btn--secondary wds-btn--icon" aria-label="Refresh"><wds-icon name="refresh" size="15"></wds-icon></button>
+            <button class="wds-btn wds-btn--primary wds-btn--loading">Saving</button>
+            <button class="wds-btn wds-btn--secondary" disabled>Disabled</button>
+          </div>
+        </section>
+
+        <section class="docs-section" id="forms">
+          <h2 class="docs-section-title">Forms</h2>
+          <div class="docs-demo wds-flex-col wds-items-start" style="width: 100%;">
+            <div class="wds-field" style="width: 320px;">
+              <label class="wds-label wds-label--required">Environment name</label>
+              <input class="wds-input" placeholder="prod-eu" />
+              <span class="wds-hint">Lowercase, hyphen-separated.</span>
+            </div>
+            <div class="wds-field wds-field--invalid" style="width: 320px;">
+              <label class="wds-label">Region</label>
+              <select class="wds-select"><option>eu-west-1</option><option>us-east-1</option></select>
+              <span class="wds-error-text">Region is required.</span>
+            </div>
+            <label class="wds-checkbox"><input type="checkbox" checked /> Enable auto-scaling</label>
+            <label class="wds-radio"><input type="radio" name="tier" /> Standard tier</label>
+            <label class="wds-switch"><input type="checkbox" checked /><span class="wds-switch-track"></span></label>
+          </div>
+        </section>
+
+        <section class="docs-section" id="menu">
+          <h2 class="docs-section-title">Menu &amp; Tooltip</h2>
+          <div class="docs-demo">
+            <wds-menu-button>
+              <wds-menu-item value="edit">Edit</wds-menu-item>
+              <wds-menu-item value="duplicate">Duplicate</wds-menu-item>
+              <wds-menu-separator></wds-menu-separator>
+              <wds-menu-item value="delete" danger>Delete</wds-menu-item>
+            </wds-menu-button>
+            <button class="wds-btn wds-btn--secondary wds-btn--icon" data-wds-tooltip="Download report">
+              <wds-icon name="download" size="15"></wds-icon>
+            </button>
+          </div>
+        </section>
+
+        <section class="docs-section" id="badges">
+          <h2 class="docs-section-title">Badges &amp; Avatars</h2>
+          <div class="docs-demo">
+            <span class="wds-badge wds-badge--neutral">Neutral</span>
+            <span class="wds-badge wds-badge--success">Active</span>
+            <span class="wds-badge wds-badge--warning">Pending</span>
+            <span class="wds-badge wds-badge--danger">Failed</span>
+            <span class="wds-badge wds-badge--info">Info</span>
+            <span class="wds-badge wds-badge--brand">New</span>
+          </div>
+          <div class="docs-demo wds-items-center">
+            <span class="wds-avatar">JD</span>
+            <span class="wds-avatar wds-avatar--lg" style="position:relative;">JD<span class="wds-avatar-status wds-avatar-status--online"></span></span>
+            <span class="wds-avatar wds-avatar--square">PT</span>
+          </div>
+        </section>
+
+        <section class="docs-section" id="toast">
+          <h2 class="docs-section-title">Toast notifications</h2>
+          <p class="docs-section-desc">Imperative API — no markup required. A container is created automatically.</p>
+          <div class="docs-demo">
+            <button class="wds-btn wds-btn--secondary" id="toast-success">Success toast</button>
+            <button class="wds-btn wds-btn--secondary" id="toast-error">Error toast</button>
+            <button class="wds-btn wds-btn--secondary" id="toast-action">Toast with action</button>
+          </div>
+        </section>
+
+        <section class="docs-section" id="modal">
+          <h2 class="docs-section-title">Modal, Drawer &amp; Confirm</h2>
+          <div class="docs-demo">
+            <button class="wds-btn wds-btn--secondary" id="open-modal">Open modal</button>
+            <button class="wds-btn wds-btn--secondary" id="open-drawer">Open drawer</button>
+            <button class="wds-btn wds-btn--danger-ghost" id="open-confirm">Delete with confirm</button>
+          </div>
+          <wds-modal id="demo-modal" heading="Edit environment" size="md">
+            <div class="wds-field"><label class="wds-label">Name</label><input class="wds-input" value="prod-eu" /></div>
+            <div slot="footer">
+              <button class="wds-btn wds-btn--secondary" data-wds-close>Cancel</button>
+              <button class="wds-btn wds-btn--primary" data-wds-close>Save</button>
+            </div>
+          </wds-modal>
+          <wds-drawer id="demo-drawer" heading="Filters" side="right" size="sm">
+            <div class="wds-field"><label class="wds-label">Status</label><select class="wds-select"><option>Any</option></select></div>
+            <div slot="footer">
+              <button class="wds-btn wds-btn--secondary" data-wds-close>Cancel</button>
+              <button class="wds-btn wds-btn--primary" data-wds-close>Apply</button>
+            </div>
+          </wds-drawer>
+        </section>
+
+        <section class="docs-section" id="empty">
+          <h2 class="docs-section-title">Empty &amp; Skeleton states</h2>
+          <div class="docs-demo" style="width: 100%;">
+            <div class="wds-empty-state" style="flex:1;">
+              <div class="wds-empty-state-icon"><wds-icon name="folder" size="22"></wds-icon></div>
+              <div class="wds-empty-state-title">No environments yet</div>
+              <div class="wds-empty-state-description">Create your first environment to start deploying.</div>
+              <div class="wds-empty-state-actions"><button class="wds-btn wds-btn--primary wds-btn--sm">New environment</button></div>
+            </div>
+          </div>
+          <div class="docs-demo wds-flex-col" style="width: 100%;">
+            <span class="wds-skeleton wds-skeleton-title"></span>
+            <span class="wds-skeleton wds-skeleton-text"></span>
+            <span class="wds-skeleton wds-skeleton-text" style="width: 70%"></span>
+          </div>
+        </section>
+
+        <section class="docs-section" id="cards">
+          <h2 class="docs-section-title">Cards &amp; Stat Cards</h2>
+          <div class="wds-stat-card-grid wds-mb-md">
+            <div class="wds-stat-card">
+              <div class="wds-stat-card-top"><span class="wds-stat-card-label">Active environments</span><span class="wds-stat-card-icon"><wds-icon name="home" size="16"></wds-icon></span></div>
+              <div class="wds-stat-card-value">42</div>
+              <span class="wds-stat-card-trend wds-stat-card-trend--up"><wds-icon name="arrow-up-right" size="13"></wds-icon> 8% vs last week</span>
+            </div>
+            <div class="wds-stat-card">
+              <div class="wds-stat-card-top"><span class="wds-stat-card-label">Failed deploys</span><span class="wds-stat-card-icon"><wds-icon name="alert-triangle" size="16"></wds-icon></span></div>
+              <div class="wds-stat-card-value">3</div>
+              <span class="wds-stat-card-trend wds-stat-card-trend--down"><wds-icon name="arrow-down-right" size="13"></wds-icon> 2% vs last week</span>
+            </div>
+          </div>
+          <div class="wds-card">
+            <div class="wds-card-header"><span class="wds-card-title">Card title</span><span class="wds-badge wds-badge--success">Active</span></div>
+            <div class="wds-card-body">Card body content goes here.</div>
+            <div class="wds-card-footer"><button class="wds-btn wds-btn--secondary wds-btn--sm">Cancel</button><button class="wds-btn wds-btn--primary wds-btn--sm">Save</button></div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="lists">
+          <h2 class="docs-section-title">Lists</h2>
+          <div class="wds-list">
+            <div class="wds-list-item">
+              <span class="wds-list-item-icon"><wds-icon name="folder" size="16"></wds-icon></span>
+              <div class="wds-list-item-body"><span class="wds-list-item-title">prod-eu</span><span class="wds-list-item-subtitle">eu-west-1 · updated 2h ago</span></div>
+              <span class="wds-list-item-meta">Active</span>
+              <div class="wds-list-item-actions"><wds-menu-button><wds-menu-item value="edit">Edit</wds-menu-item><wds-menu-item value="delete" danger>Delete</wds-menu-item></wds-menu-button></div>
+            </div>
+            <div class="wds-list-item">
+              <span class="wds-list-item-icon"><wds-icon name="folder" size="16"></wds-icon></span>
+              <div class="wds-list-item-body"><span class="wds-list-item-title">staging</span><span class="wds-list-item-subtitle">us-east-1 · updated 1d ago</span></div>
+              <span class="wds-list-item-meta">Idle</span>
+              <div class="wds-list-item-actions"><wds-menu-button><wds-menu-item value="edit">Edit</wds-menu-item><wds-menu-item value="delete" danger>Delete</wds-menu-item></wds-menu-button></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="tables">
+          <h2 class="docs-section-title">Tables</h2>
+          <div class="wds-table-wrap">
+            <wds-table>
+              <table class="wds-table">
+                <thead>
+                  <tr>
+                    <th class="wds-table-select-col"><input type="checkbox" data-select-all /></th>
+                    <th data-sortable data-sort-key="name">Name</th>
+                    <th data-sortable data-sort-key="region">Region</th>
+                    <th>Status</th>
+                    <th class="wds-table-actions-col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-row-id="1"><td class="wds-table-select-col"><input type="checkbox" data-select /></td><td>prod-eu</td><td>eu-west-1</td><td><span class="wds-badge wds-badge--success">Active</span></td><td class="wds-table-actions-col"><wds-menu-button><wds-menu-item value="edit">Edit</wds-menu-item><wds-menu-item value="delete" danger>Delete</wds-menu-item></wds-menu-button></td></tr>
+                  <tr data-row-id="2"><td class="wds-table-select-col"><input type="checkbox" data-select /></td><td>staging</td><td>us-east-1</td><td><span class="wds-badge wds-badge--warning">Idle</span></td><td class="wds-table-actions-col"><wds-menu-button><wds-menu-item value="edit">Edit</wds-menu-item><wds-menu-item value="delete" danger>Delete</wds-menu-item></wds-menu-button></td></tr>
+                </tbody>
+              </table>
+            </wds-table>
+          </div>
+          <wds-pagination total-items="42" page-size="10" page="1"></wds-pagination>
+        </section>
+
+        <section class="docs-section" id="tree">
+          <h2 class="docs-section-title">Hierarchical Tree</h2>
+          <wds-tree>
+            <wds-tree-item label="Production" icon="folder" expanded>
+              <wds-tree-item label="eu-west-1" icon="file"></wds-tree-item>
+              <wds-tree-item label="us-east-1" icon="file"></wds-tree-item>
+            </wds-tree-item>
+            <wds-tree-item label="Staging" icon="folder">
+              <wds-tree-item label="eu-west-1" icon="file"></wds-tree-item>
+            </wds-tree-item>
+          </wds-tree>
+        </section>
+
+        <section class="docs-section" id="accordion-tabs">
+          <h2 class="docs-section-title">Accordion &amp; Tabs</h2>
+          <wds-accordion class="wds-mb-md">
+            <wds-accordion-item heading="Network settings" open><p>Panel content for network settings.</p></wds-accordion-item>
+            <wds-accordion-item heading="Advanced"><p>Panel content for advanced settings.</p></wds-accordion-item>
+          </wds-accordion>
+          <wds-tabs>
+            <wds-tab label="Details" active><p>Details panel content.</p></wds-tab>
+            <wds-tab label="Activity"><p>Activity panel content.</p></wds-tab>
+          </wds-tabs>
+        </section>
+
+        <section class="docs-section" id="nav">
+          <h2 class="docs-section-title">Navigation</h2>
+          <p class="docs-section-desc">This page's navbar + sidenav <em>is</em> the <code>.wds-app-shell</code> component — resize the window to see the mobile off-canvas behavior.</p>
+          <nav class="wds-breadcrumbs" aria-label="Breadcrumb">
+            <a href="#">Environments</a>
+            <span class="wds-breadcrumb-sep"><wds-icon name="chevron-right" size="12"></wds-icon></span>
+            <span aria-current="page">prod-eu</span>
+          </nav>
+        </section>
+
+        <section class="docs-section" id="resource-panel">
+          <h2 class="docs-section-title">Resource Panel</h2>
+          <p class="docs-section-desc">The standard detail-view shell — consistent heading, status badge, Edit + overflow (⋯ Delete, which shows a confirm dialog automatically) actions.</p>
+          <wds-resource-panel heading="prod-eu" subheading="Environment · env_8f3ac1" status="Active" status-variant="success" id="demo-panel">
+            <dl class="wds-detail-list">
+              <div class="wds-detail-row"><dt>Region</dt><dd>eu-west-1</dd></div>
+              <div class="wds-detail-row"><dt>Owner</dt><dd>platform-team</dd></div>
+              <div class="wds-detail-row"><dt>Auto-scaling</dt><dd>Enabled</dd></div>
+            </dl>
+            <wds-menu-item slot="actions" value="duplicate">Duplicate</wds-menu-item>
+            <span slot="footer">Created by Jane Doe on 12 Mar 2025 · Last updated 2 hours ago</span>
+          </wds-resource-panel>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="../wds.js"></script>
+  <script type="module">
+    import { toast, confirm, theme } from "../wds.js";
+
+    document.getElementById("theme-toggle").addEventListener("click", () => theme.toggle());
+
+    document.getElementById("toast-success").addEventListener("click", () => toast.success("Environment saved"));
+    document.getElementById("toast-error").addEventListener("click", () =>
+      toast.error("Could not save environment", { message: "Network timeout, please retry." })
+    );
+    document.getElementById("toast-action").addEventListener("click", () =>
+      toast.info("Deploy queued", { action: { label: "View", onClick: () => toast.success("Opened deploy") } })
+    );
+
+    document.getElementById("open-modal").addEventListener("click", () => document.getElementById("demo-modal").open());
+    document.getElementById("open-drawer").addEventListener("click", () => document.getElementById("demo-drawer").open());
+    document.getElementById("open-confirm").addEventListener("click", async () => {
+      const ok = await confirm({ title: "Delete prod-eu?", message: "This cannot be undone.", confirmLabel: "Delete", danger: true });
+      if (ok) toast.success("prod-eu deleted");
+    });
+
+    document.getElementById("demo-panel").addEventListener("wds-edit", () => toast.info("Edit clicked"));
+    document.getElementById("demo-panel").addEventListener("wds-delete", () => toast.success("Resource deleted"));
+    document.getElementById("demo-panel").addEventListener("wds-action", (e) => toast.info(`Action: ${e.detail.value}`));
+  </script>
+</body>
+</html>

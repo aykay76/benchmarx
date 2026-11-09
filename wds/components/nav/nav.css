@@ -1,0 +1,145 @@
+/* WDS Navigation — app shell (navbar + collapsible sidenav), breadcrumbs, pagination */
+
+.wds-app-shell {
+  display: grid;
+  grid-template-columns: var(--wds-sidenav-width) 1fr;
+  grid-template-rows: 56px 1fr;
+  grid-template-areas:
+    "sidenav navbar"
+    "sidenav main";
+  min-height: 100svh;
+}
+
+.wds-navbar {
+  grid-area: navbar;
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-md);
+  padding-inline: var(--wds-space-lg);
+  background: var(--wds-surface);
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+  position: sticky;
+  top: 0;
+  z-index: var(--wds-z-sticky);
+}
+
+.wds-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  font-weight: var(--wds-font-weight-semibold);
+}
+
+.wds-navbar-spacer {
+  flex: 1;
+}
+
+.wds-app-main {
+  grid-area: main;
+  padding: var(--wds-space-lg);
+  overflow-y: auto;
+}
+
+.wds-sidenav {
+  grid-area: sidenav;
+  display: flex;
+  flex-direction: column;
+  gap: var(--wds-space-lg);
+  padding: var(--wds-space-md);
+  background: var(--wds-surface);
+  border-right: var(--wds-border-width) solid var(--wds-border);
+  overflow-y: auto;
+}
+
+.wds-sidenav-group-label {
+  padding: var(--wds-space-xs) var(--wds-space-sm) var(--wds-space-2xs);
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--wds-text-subtle);
+}
+
+.wds-sidenav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  padding: var(--wds-space-xs) var(--wds-space-sm);
+  border-radius: var(--wds-radius-md);
+  font-size: var(--wds-text-sm);
+  font-weight: var(--wds-font-weight-medium);
+  color: var(--wds-text-muted);
+}
+
+.wds-sidenav-link:hover {
+  background: var(--wds-surface-sunken);
+  color: var(--wds-text);
+}
+
+.wds-sidenav-link[aria-current="page"] {
+  background: var(--wds-primary-subtle);
+  color: var(--wds-primary);
+}
+
+.wds-sidenav-link wds-icon {
+  color: inherit;
+}
+
+.wds-sidenav-toggle {
+  display: none;
+}
+
+/* Mobile: sidenav becomes an off-canvas overlay toggled by [data-wds-nav-open] */
+@media (max-width: 860px) {
+  .wds-app-shell {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar"
+      "main";
+  }
+  .wds-sidenav-toggle {
+    display: inline-flex;
+  }
+  .wds-sidenav {
+    position: fixed;
+    inset: 0 25% 0 0;
+    z-index: var(--wds-z-drawer);
+    transform: translateX(-100%);
+    transition: transform var(--wds-duration-slow) var(--wds-ease);
+    box-shadow: var(--wds-shadow-xl);
+  }
+  .wds-app-shell[data-wds-nav-open] .wds-sidenav {
+    transform: translateX(0);
+  }
+  .wds-app-shell[data-wds-nav-open]::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--wds-overlay);
+    z-index: calc(var(--wds-z-drawer) - 1);
+  }
+}
+
+/* Breadcrumbs */
+.wds-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-2xs);
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+  margin-bottom: var(--wds-space-md);
+}
+
+.wds-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.wds-breadcrumbs [aria-current="page"] {
+  color: var(--wds-text);
+  font-weight: var(--wds-font-weight-medium);
+}
+
+.wds-breadcrumb-sep {
+  color: var(--wds-text-subtle);
+  display: inline-flex;
+}

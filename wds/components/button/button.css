@@ -1,0 +1,129 @@
+/* WDS Button — .wds-btn base + variant/size/state modifiers */
+
+.wds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--wds-space-2xs);
+  height: 34px;
+  padding-inline: var(--wds-space-sm);
+  border-radius: var(--wds-radius-md);
+  border: var(--wds-border-width) solid transparent;
+  font-size: var(--wds-text-sm);
+  font-weight: var(--wds-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color var(--wds-duration-fast) var(--wds-ease),
+              border-color var(--wds-duration-fast) var(--wds-ease),
+              color var(--wds-duration-fast) var(--wds-ease);
+}
+
+.wds-btn:disabled,
+.wds-btn[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+a.wds-btn:hover {
+  text-decoration: none;
+}
+
+/* Variants */
+.wds-btn.wds-btn--primary {
+  background: var(--wds-primary);
+  color: var(--wds-text-on-brand);
+}
+.wds-btn--primary:hover { background: var(--wds-primary-hover); }
+.wds-btn--primary:active { background: var(--wds-primary-active); }
+
+.wds-btn.wds-btn--secondary {
+  background: var(--wds-surface);
+  border-color: var(--wds-border-strong);
+  color: var(--wds-text);
+}
+.wds-btn--secondary:hover { background: var(--wds-surface-sunken); }
+
+.wds-btn.wds-btn--ghost {
+  background: transparent;
+  color: var(--wds-text);
+}
+.wds-btn--ghost:hover { background: var(--wds-surface-sunken); }
+
+.wds-btn.wds-btn--danger {
+  background: var(--wds-danger);
+  color: #fff;
+}
+.wds-btn--danger:hover { background: var(--wds-danger-hover); }
+
+.wds-btn.wds-btn--danger-ghost {
+  background: transparent;
+  color: var(--wds-danger);
+}
+.wds-btn--danger-ghost:hover { background: var(--wds-danger-subtle); }
+
+/* Sizes */
+.wds-btn--sm {
+  height: 28px;
+  padding-inline: var(--wds-space-xs);
+  font-size: var(--wds-text-xs);
+  border-radius: var(--wds-radius-sm);
+}
+
+.wds-btn--lg {
+  height: 40px;
+  padding-inline: var(--wds-space-md);
+  font-size: var(--wds-text-base);
+}
+
+/* Icon-only button (square) */
+.wds-btn--icon {
+  width: 34px;
+  padding-inline: 0;
+}
+.wds-btn--icon.wds-btn--sm {
+  width: 28px;
+}
+
+.wds-btn--full {
+  width: 100%;
+}
+
+/* Loading state: hide label, show inline spinner via ::after */
+.wds-btn--loading {
+  color: transparent !important;
+  pointer-events: none;
+  position: relative;
+}
+.wds-btn--loading::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  color: inherit;
+  animation: wds-spin 0.7s linear infinite;
+}
+.wds-btn--primary.wds-btn--loading::after,
+.wds-btn--danger.wds-btn--loading::after {
+  color: #fff;
+}
+.wds-btn--secondary.wds-btn--loading::after,
+.wds-btn--ghost.wds-btn--loading::after {
+  color: var(--wds-text);
+}
+
+@keyframes wds-spin {
+  to { transform: rotate(360deg); }
+}
+
+.wds-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--wds-border-strong);
+  border-top-color: var(--wds-primary);
+  animation: wds-spin 0.7s linear infinite;
+}

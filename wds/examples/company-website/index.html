@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acme — Run your whole operation from one place</title>
+  <script>
+    const t = localStorage.getItem("wds-theme");
+    if (t) document.documentElement.setAttribute("data-wds-theme", t);
+  </script>
+  <link rel="stylesheet" href="../../wds.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="../../wds.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="wds-navbar site-navbar">
+      <a class="wds-navbar-brand" href="./index.html"><wds-icon name="home"></wds-icon> Acme</a>
+      <div class="site-nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+      <div class="wds-navbar-spacer"></div>
+      <a class="wds-btn wds-btn--ghost wds-btn--sm" href="./contact.html">Log in</a>
+      <a class="wds-btn wds-btn--primary wds-btn--sm" href="./contact.html">Get started</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wds-container hero-inner">
+        <span class="wds-badge wds-badge--brand"><wds-icon name="check-circle" size="12"></wds-icon> New: workflow automation</span>
+        <h1>Run your whole operation from one place</h1>
+        <p class="wds-text-muted">
+          Acme unifies planning, execution and reporting so your team ships faster without duct-taping
+          together five different tools.
+        </p>
+        <div class="hero-actions">
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="./contact.html">Start free trial</a>
+          <a class="wds-btn wds-btn--secondary wds-btn--lg" href="#features">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="features">
+      <div class="wds-container">
+        <div class="section-heading">
+          <h2>Everything your team needs</h2>
+          <p class="wds-text-muted">Purpose-built tools that fit together, instead of a pile of point solutions.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="wds-card">
+            <div class="wds-card-body">
+              <div class="feature-card-icon"><wds-icon name="filter" size="20"></wds-icon></div>
+              <div class="wds-card-title">Planning</div>
+              <p class="wds-text-muted wds-text-sm">Roadmaps and sprints that stay in sync automatically.</p>
+            </div>
+          </div>
+          <div class="wds-card">
+            <div class="wds-card-body">
+              <div class="feature-card-icon"><wds-icon name="refresh" size="20"></wds-icon></div>
+              <div class="wds-card-title">Automation</div>
+              <p class="wds-text-muted wds-text-sm">Trigger workflows on any event, no code required.</p>
+            </div>
+          </div>
+          <div class="wds-card">
+            <div class="wds-card-body">
+              <div class="feature-card-icon"><wds-icon name="external-link" size="20"></wds-icon></div>
+              <div class="wds-card-title">Reporting</div>
+              <p class="wds-text-muted wds-text-sm">Live dashboards your whole company can trust.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-section--sunken">
+      <div class="wds-container">
+        <div class="wds-stat-card-grid">
+          <div class="wds-stat-card">
+            <div class="wds-stat-card-top">
+              <span class="wds-stat-card-label">Active teams</span>
+              <span class="wds-stat-card-icon"><wds-icon name="user" size="16"></wds-icon></span>
+            </div>
+            <div class="wds-stat-card-value">12,400+</div>
+          </div>
+          <div class="wds-stat-card">
+            <div class="wds-stat-card-top">
+              <span class="wds-stat-card-label">Uptime</span>
+              <span class="wds-stat-card-icon"><wds-icon name="check-circle" size="16"></wds-icon></span>
+            </div>
+            <div class="wds-stat-card-value">99.98%</div>
+          </div>
+          <div class="wds-stat-card">
+            <div class="wds-stat-card-top">
+              <span class="wds-stat-card-label">Avg. setup time</span>
+              <span class="wds-stat-card-icon"><wds-icon name="home" size="16"></wds-icon></span>
+            </div>
+            <div class="wds-stat-card-value">4 minutes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="pricing">
+      <div class="wds-container">
+        <div class="section-heading">
+          <h2>Simple, transparent pricing</h2>
+          <p class="wds-text-muted">Start free. Upgrade when your team grows.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="wds-card pricing-card">
+            <div class="wds-card-body">
+              <div class="wds-card-title">Starter</div>
+              <div class="pricing-price">$0<span>/month</span></div>
+              <ul class="pricing-features">
+                <li><wds-icon name="check" size="14"></wds-icon> Up to 5 members</li>
+                <li><wds-icon name="check" size="14"></wds-icon> 3 projects</li>
+                <li><wds-icon name="check" size="14"></wds-icon> Community support</li>
+              </ul>
+              <a class="wds-btn wds-btn--secondary wds-btn--full" href="./contact.html">Get started</a>
+            </div>
+          </div>
+          <div class="wds-card pricing-card pricing-card--highlight">
+            <div class="wds-card-body">
+              <span class="wds-badge wds-badge--brand">Most popular</span>
+              <div class="wds-card-title wds-mt-sm">Growth</div>
+              <div class="pricing-price">$29<span>/month</span></div>
+              <ul class="pricing-features">
+                <li><wds-icon name="check" size="14"></wds-icon> Unlimited members</li>
+                <li><wds-icon name="check" size="14"></wds-icon> Unlimited projects</li>
+                <li><wds-icon name="check" size="14"></wds-icon> Priority support</li>
+                <li><wds-icon name="check" size="14"></wds-icon> Automation rules</li>
+              </ul>
+              <a class="wds-btn wds-btn--primary wds-btn--full" href="./contact.html">Start free trial</a>
+            </div>
+          </div>
+          <div class="wds-card pricing-card">
+            <div class="wds-card-body">
+              <div class="wds-card-title">Enterprise</div>
+              <div class="pricing-price">Custom</div>
+              <ul class="pricing-features">
+                <li><wds-icon name="check" size="14"></wds-icon> SSO &amp; SCIM</li>
+                <li><wds-icon name="check" size="14"></wds-icon> Audit logs</li>
+                <li><wds-icon name="check" size="14"></wds-icon> Dedicated support</li>
+              </ul>
+              <a class="wds-btn wds-btn--secondary wds-btn--full" href="./contact.html">Contact sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="cta-banner">
+        <div>
+          <h2>Ready to get started?</h2>
+          <p>Set up your workspace in minutes — no credit card required.</p>
+        </div>
+        <a class="wds-btn wds-btn--secondary wds-btn--lg" href="./contact.html">Start free trial</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Product</div>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Careers</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="../../docs/index.html">Component gallery</a>
+        <a href="./contact.html">Support</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Acme, Inc.</span>
+      <span>Built with WDS</span>
+    </div>
+  </footer>
+</body>
+</html>

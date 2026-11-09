@@ -1,0 +1,48 @@
+/* WDS Tabs */
+
+wds-tabs {
+  display: block;
+}
+
+.wds-tablist {
+  display: flex;
+  gap: var(--wds-space-lg);
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+}
+
+.wds-tab-trigger {
+  position: relative;
+  padding: var(--wds-space-sm) 0;
+  font-size: var(--wds-text-sm);
+  font-weight: var(--wds-font-weight-medium);
+  color: var(--wds-text-muted);
+  cursor: pointer;
+}
+
+.wds-tab-trigger:hover {
+  color: var(--wds-text);
+}
+
+.wds-tab-trigger[aria-selected="true"] {
+  color: var(--wds-primary);
+}
+
+.wds-tab-trigger[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--wds-primary);
+  border-radius: var(--wds-radius-full);
+}
+
+wds-tab {
+  display: block;
+  padding-top: var(--wds-space-md);
+}
+
+wds-tab[hidden] {
+  display: none;
+}

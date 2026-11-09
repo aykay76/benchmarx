@@ -1,0 +1,51 @@
+/* Docs-site-only styles (not part of the design system itself) */
+
+.docs-section {
+  margin-bottom: var(--wds-space-3xl);
+  scroll-margin-top: 72px;
+}
+
+.docs-section-title {
+  margin-bottom: var(--wds-space-xs);
+}
+
+.docs-section-desc {
+  color: var(--wds-text-muted);
+  margin-bottom: var(--wds-space-md);
+  max-width: 70ch;
+}
+
+.docs-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--wds-space-sm);
+  padding: var(--wds-space-lg);
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-lg);
+  background: var(--wds-surface);
+  margin-bottom: var(--wds-space-sm);
+}
+
+.docs-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: var(--wds-space-xs);
+}
+
+.docs-swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wds-space-2xs);
+}
+
+.docs-swatch-color {
+  height: 48px;
+  border-radius: var(--wds-radius-md);
+  border: var(--wds-border-width) solid var(--wds-border);
+}
+
+.docs-swatch-label {
+  font-size: var(--wds-text-xs);
+  color: var(--wds-text-muted);
+}

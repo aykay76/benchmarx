@@ -1,0 +1,96 @@
+/* WDS Table — works as plain <table class="wds-table"> with zero JS,
+   or wrap in <wds-table> for sortable headers + row selection behavior. */
+
+.wds-table-wrap {
+  overflow-x: auto;
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-lg);
+  background: var(--wds-surface);
+}
+
+.wds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--wds-text-sm);
+}
+
+.wds-table th,
+.wds-table td {
+  padding: var(--wds-space-sm) var(--wds-space-md);
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+}
+
+.wds-table thead th {
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--wds-text-muted);
+  background: var(--wds-surface-sunken);
+  white-space: nowrap;
+}
+
+.wds-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.wds-table tbody tr:hover {
+  background: var(--wds-surface-sunken);
+}
+
+.wds-table tbody tr[data-selected="true"] {
+  background: var(--wds-primary-subtle);
+}
+
+.wds-table--sticky-header thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.wds-table-select-col,
+.wds-table-actions-col {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.wds-table th[data-sortable] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.wds-table-sort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wds-space-3xs);
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.wds-table-sort-icon {
+  color: var(--wds-text-subtle);
+  transition: transform var(--wds-duration-fast) var(--wds-ease);
+}
+
+.wds-table th[aria-sort="ascending"] .wds-table-sort-icon {
+  color: var(--wds-primary);
+  transform: rotate(180deg);
+}
+
+.wds-table th[aria-sort="descending"] .wds-table-sort-icon {
+  color: var(--wds-primary);
+}
+
+.wds-table-cell-muted {
+  color: var(--wds-text-muted);
+}
+
+.wds-table-empty-row td {
+  padding: 0;
+}

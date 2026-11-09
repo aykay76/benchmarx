@@ -1,15 +1,19 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-wds-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Benchmarx builds sovereign developer platforms and intelligent engineering systems for teams that need control.">
-    <title>Benchmarx — Engineering the next layer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/app.js" defer></script>
+    <meta name="description" content="Benchmarx is an independent software engineering company building developer platforms, intelligent agents and bespoke software.">
+    <title>Benchmarx — Thoughtful engineering. Lasting advantage.</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -18,131 +22,110 @@
       })(window, document, "clarity", "script", "yirbikdn8m");
     </script>
   </head>
-  <body>
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="#" aria-label="Benchmarx home">
-          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>benchmarx</span>
-        </a>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#approach">Approach</a>
-          <a href="#platform">Platform</a>
-          <a href="#about">About</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle theme">
-            <span class="theme-icon" aria-hidden="true">☼</span>
-          </button>
-          <a class="header-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="#top" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="#platform">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="wds-site-hero wds-site-container" aria-labelledby="hero-title">
+        <p class="wds-site-eyebrow">Independent software engineering</p>
+        <h1 id="hero-title">Thoughtful engineering.<br><span>Lasting advantage.</span></h1>
+        <p class="wds-site-lead">We help teams build better software, from developer platforms to intelligent agents. Clear thinking. Practical solutions. Technology you can own.</p>
+        <div class="wds-site-hero-actions">
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="#contact">Let's talk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+          <a class="wds-btn wds-btn--ghost wds-btn--lg" href="#platform">Explore our services <wds-icon name="chevron-down" aria-hidden="true"></wds-icon></a>
         </div>
-      </header>
+        <p class="wds-site-hero-note">Building software with intent since 1998.</p>
+      </section>
 
-      <main>
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-grid" aria-hidden="true"></div>
-          <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
-          <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
-          <div class="hero-content">
-            <p class="eyebrow reveal"><span class="eyebrow-dot"></span> Independent engineering studio <span class="eyebrow-year">Est. 1998</span></p>
-            <h1 id="hero-title" class="reveal">Make your<br><em>own</em> way.</h1>
-            <p class="hero-copy reveal">Benchmarx helps ambitious teams build the platforms, systems and intelligent agents that make modern engineering feel inevitable.</p>
-            <div class="hero-actions reveal">
-              <a class="button button-primary" href="#platform">Explore the thinking <span aria-hidden="true">↓</span></a>
-              <a class="text-link" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+      <section class="wds-site-services" id="platform" aria-labelledby="services-title">
+        <div class="wds-site-container wds-site-section">
+          <div class="wds-site-section-heading">
+            <div>
+              <p class="wds-site-eyebrow">What we do</p>
+              <h2 id="services-title">Good ideas. Well engineered.</h2>
             </div>
+            <p>Technical depth for the things that matter. We turn complex challenges into useful, working software.</p>
           </div>
-          <div class="hero-note reveal">
-            <span>01 / 03</span>
-            <p>Software is the<br>competitive advantage.</p>
-          </div>
-          <div class="scroll-cue" aria-hidden="true"><span></span> Scroll to explore</div>
-        </section>
-
-        <section class="signal-strip" aria-label="Areas of focus">
-          <div class="signal-track">
-            <span>Platform engineering</span><b>✳</b><span>Agentic AI</span><b>✳</b><span>Sovereign infrastructure</span><b>✳</b><span>Platform engineering</span><b>✳</b><span>Agentic AI</span><b>✳</b>
-          </div>
-        </section>
-
-        <section class="intro section-pad" id="approach" aria-labelledby="intro-title">
-          <div class="section-label"><span>01</span><span>Why Benchmarx</span></div>
-          <div class="intro-layout">
-            <h2 id="intro-title">The best technology<br><span>disappears into flow.</span></h2>
-            <div class="intro-aside">
-              <p>For nearly three decades, we’ve been turning complex technology into a calm, useful advantage. Today, that means helping teams own the layer between an idea and the outcome.</p>
-              <a class="arrow-link" href="#about">Our point of view <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </section>
-
-        <section class="capabilities section-pad" id="platform" aria-labelledby="capabilities-title">
-          <div class="section-label"><span>02</span><span>What we do</span></div>
-          <div class="capabilities-heading">
-            <h2 id="capabilities-title">Build the conditions<br>for <span>better work.</span></h2>
-            <p>Strategy is only useful when it becomes a working system. We bring the technical depth to get there.</p>
-          </div>
-          <div class="capability-grid">
-            <article class="capability-card capability-featured">
-              <div class="card-top"><span class="card-index">01</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-              <div class="card-icon icon-stack" aria-hidden="true"><span></span><span></span><span></span></div>
-              <h3>Sovereign<br>developer platforms</h3>
-              <p>Your tools. Your cloud. Your telemetry. A developer platform designed around your organisation, not someone else’s roadmap.</p>
-              <span class="card-tag">In development · Coming soon</span>
+          <div class="wds-site-service-grid">
+            <article class="wds-card">
+              <div class="wds-card-body wds-site-service-body">
+                <wds-icon name="folder" size="24" aria-hidden="true"></wds-icon>
+                <h3>Developer platforms</h3>
+                <p>Your tools, your cloud, your telemetry. Sovereign platforms designed around your organisation, not someone else's roadmap.</p>
+                <span class="wds-badge wds-badge--neutral">In development</span>
+              </div>
             </article>
-            <article class="capability-card">
-              <div class="card-top"><span class="card-index">02</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-              <div class="card-icon icon-agent" aria-hidden="true"><span>✦</span></div>
-              <h3>Agentic<br>AI development</h3>
-              <p>Purpose-built agents that do real work, run where you need them and keep your data where it belongs.</p>
+            <article class="wds-card">
+              <div class="wds-card-body wds-site-service-body">
+                <wds-icon name="settings" size="24" aria-hidden="true"></wds-icon>
+                <h3>Agentic AI</h3>
+                <p>Purpose-built agents that do useful work, run where you need them and keep your data where it belongs.</p>
+              </div>
             </article>
-            <article class="capability-card">
-              <div class="card-top"><span class="card-index">03</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-              <div class="card-icon icon-code" aria-hidden="true">&lt;/&gt;</div>
-              <h3>Bespoke<br>engineering</h3>
-              <p>Pragmatic software development for the hard, important parts that do not fit neatly in a box.</p>
+            <article class="wds-card">
+              <div class="wds-card-body wds-site-service-body">
+                <wds-icon name="file" size="24" aria-hidden="true"></wds-icon>
+                <h3>Bespoke engineering</h3>
+                <p>Pragmatic software development for the hard, important parts. Built to fit your business and work for your team.</p>
+              </div>
             </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="manifesto" aria-labelledby="manifesto-title">
-          <div class="manifesto-glow" aria-hidden="true"></div>
-          <div class="section-label"><span>03</span><span>How we think</span></div>
-          <h2 id="manifesto-title">Control is not<br>a constraint.<br><em>It’s a superpower.</em></h2>
-          <div class="manifesto-bottom">
-            <p>We believe the next generation of engineering teams will be defined by the systems they own — the infrastructure, intelligence and insight that compound over time.</p>
-            <span class="manifesto-mark" aria-hidden="true">✳</span>
+      <section class="wds-site-container wds-site-section wds-site-split" id="approach" aria-labelledby="approach-title">
+        <div>
+          <p class="wds-site-eyebrow">Our approach</p>
+          <h2 id="approach-title">Less complexity.<br>More possibility.</h2>
+        </div>
+        <div class="wds-site-prose">
+          <p>The best technology makes the work easier. We start with what your team needs, then build the systems that help you get there.</p>
+          <p>That means practical choices, infrastructure you control and software that stays useful as your business evolves.</p>
+          <a class="wds-site-inline-link" href="#contact">Tell us what you're working on <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+
+      <section class="wds-site-container wds-site-section wds-site-split wds-site-about" id="about" aria-labelledby="about-title">
+        <div>
+          <p class="wds-site-eyebrow">About Benchmarx</p>
+          <h2 id="about-title">Experience that looks forward.</h2>
+        </div>
+        <div class="wds-site-prose">
+          <p>We've been building software since 1998. That experience gives us the judgement to separate durable ideas from passing noise, and the curiosity to keep learning what's next.</p>
+          <p>Today, our focus is on making sophisticated engineering capabilities accessible, ownable and genuinely useful to the people doing the work.</p>
+        </div>
+      </section>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">What are you building?</h2>
+            <p>A new platform, an AI idea, a difficult software problem.<br>We'd like to hear about it.</p>
           </div>
-        </section>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:hello@benchmarx.dev">hello@benchmarx.dev <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
 
-        <section class="about section-pad" id="about" aria-labelledby="about-title">
-          <div class="section-label"><span>04</span><span>Experience, with intent</span></div>
-          <div class="about-layout">
-            <h2 id="about-title">Long-term thinking.<br><span>Current technology.</span></h2>
-            <div class="about-copy">
-              <p>Benchmarx has been building software since 1998. That history matters: it gives us the judgement to separate durable ideas from passing noise, and the curiosity to keep learning what’s next.</p>
-              <p>Our focus now is simple — make sophisticated engineering capabilities accessible, ownable and genuinely useful to the people doing the work.</p>
-              <div class="timeline"><span>1998</span><i></i><span>2026 →</span></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
-          <div class="contact-card">
-            <div class="contact-orbit" aria-hidden="true"></div>
-            <p class="eyebrow"><span class="eyebrow-dot"></span> There is always a next move</p>
-            <h2 id="contact-title">Have a hard problem?<br><em>Let’s make it useful.</em></h2>
-            <p class="contact-copy">If you’re shaping a developer platform, exploring agentic AI, or just want to compare notes, we’d like to hear from you.</p>
-            <a class="button button-light" href="mailto:hello@benchmarx.dev">Get in touch <span aria-hidden="true">↗</span></a>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <a class="brand" href="#" aria-label="Benchmarx home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>benchmarx</span></a>
-        <p>Software, with intent.</p>
-        <span>© <span id="current-year">2026</span> Benchmarx</span>
-      </footer>
-    </div>
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="#top" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
   </body>
 </html>

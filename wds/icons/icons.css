@@ -1,0 +1,10 @@
+wds-icon {
+  display: inline-flex;
+  flex: none;
+  color: inherit;
+  line-height: 0;
+}
+
+.wds-icon-svg {
+  display: block;
+}

@@ -1,0 +1,155 @@
+/* WDS Forms — consistent labels, inputs, selects, checkboxes, radios, switches */
+
+.wds-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wds-space-2xs);
+  margin-bottom: var(--wds-space-md);
+}
+
+.wds-label {
+  font-size: var(--wds-text-sm);
+  font-weight: var(--wds-font-weight-medium);
+  color: var(--wds-text);
+}
+
+.wds-label--required::after {
+  content: " *";
+  color: var(--wds-danger);
+}
+
+.wds-hint {
+  font-size: var(--wds-text-xs);
+  color: var(--wds-text-muted);
+}
+
+.wds-error-text {
+  font-size: var(--wds-text-xs);
+  color: var(--wds-danger);
+}
+
+.wds-input,
+.wds-select,
+.wds-textarea {
+  width: 100%;
+  height: 34px;
+  padding-inline: var(--wds-space-sm);
+  background: var(--wds-surface);
+  border: var(--wds-border-width) solid var(--wds-border-strong);
+  border-radius: var(--wds-radius-md);
+  color: var(--wds-text);
+  font-size: var(--wds-text-sm);
+  transition: border-color var(--wds-duration-fast) var(--wds-ease);
+}
+
+.wds-textarea {
+  height: auto;
+  min-height: 80px;
+  padding-block: var(--wds-space-xs);
+  resize: vertical;
+}
+
+.wds-input:hover,
+.wds-select:hover,
+.wds-textarea:hover {
+  border-color: var(--wds-neutral-400);
+}
+
+.wds-input:focus,
+.wds-select:focus,
+.wds-textarea:focus {
+  outline: none;
+  border-color: var(--wds-primary);
+  box-shadow: 0 0 0 3px var(--wds-primary-subtle);
+}
+
+.wds-input::placeholder,
+.wds-textarea::placeholder {
+  color: var(--wds-text-subtle);
+}
+
+.wds-input:disabled,
+.wds-select:disabled,
+.wds-textarea:disabled {
+  background: var(--wds-surface-sunken);
+  color: var(--wds-text-subtle);
+  cursor: not-allowed;
+}
+
+.wds-field--invalid .wds-input,
+.wds-field--invalid .wds-select,
+.wds-field--invalid .wds-textarea {
+  border-color: var(--wds-danger);
+}
+.wds-field--invalid .wds-input:focus,
+.wds-field--invalid .wds-select:focus,
+.wds-field--invalid .wds-textarea:focus {
+  box-shadow: 0 0 0 3px var(--wds-danger-subtle);
+}
+
+/* Checkbox / radio */
+.wds-checkbox,
+.wds-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  font-size: var(--wds-text-sm);
+  cursor: pointer;
+}
+
+.wds-checkbox input,
+.wds-radio input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--wds-primary);
+}
+
+/* Switch */
+.wds-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 36px;
+  height: 20px;
+}
+
+.wds-switch input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.wds-switch-track {
+  position: absolute;
+  inset: 0;
+  background: var(--wds-neutral-300);
+  border-radius: var(--wds-radius-full);
+  transition: background-color var(--wds-duration-fast) var(--wds-ease);
+}
+
+.wds-switch-track::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform var(--wds-duration-fast) var(--wds-ease);
+}
+
+.wds-switch input:checked + .wds-switch-track {
+  background: var(--wds-primary);
+}
+
+.wds-switch input:checked + .wds-switch-track::before {
+  transform: translateX(16px);
+}
+
+.wds-switch input:focus-visible + .wds-switch-track {
+  outline: 2px solid var(--wds-focus-ring);
+  outline-offset: 2px;
+}

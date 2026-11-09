@@ -1,0 +1,60 @@
+/* WDS Avatar — user/entity avatars with image or initials fallback + status dot */
+
+.wds-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--wds-radius-full);
+  background: var(--wds-brand-100);
+  color: var(--wds-brand-700);
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-semibold);
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.wds-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wds-avatar--sm { width: 24px; height: 24px; font-size: 10px; }
+.wds-avatar--lg { width: 40px; height: 40px; font-size: var(--wds-text-sm); }
+.wds-avatar--xl { width: 56px; height: 56px; font-size: var(--wds-text-md); }
+
+.wds-avatar--square {
+  border-radius: var(--wds-radius-md);
+}
+
+.wds-avatar-status {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid var(--wds-surface);
+  background: var(--wds-neutral-400);
+}
+
+.wds-avatar-status--online { background: var(--wds-success); }
+.wds-avatar-status--away { background: var(--wds-warning); }
+.wds-avatar-status--offline { background: var(--wds-neutral-400); }
+
+.wds-avatar-group {
+  display: inline-flex;
+}
+
+.wds-avatar-group .wds-avatar {
+  margin-inline-start: -8px;
+  border: 2px solid var(--wds-surface);
+}
+
+.wds-avatar-group .wds-avatar:first-child {
+  margin-inline-start: 0;
+}

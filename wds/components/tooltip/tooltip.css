@@ -1,0 +1,72 @@
+/**
+ * WDS Tooltip — CSS-only, no JS required.
+ *
+ * Usage:
+ *   <button class="wds-btn wds-btn--icon" data-wds-tooltip="Refresh">
+ *     <wds-icon name="refresh"></wds-icon>
+ *   </button>
+ *
+ * Placement: data-wds-tooltip-placement="top|bottom|left|right" (default top)
+ */
+
+[data-wds-tooltip] {
+  position: relative;
+}
+
+[data-wds-tooltip]::after {
+  content: attr(data-wds-tooltip);
+  position: absolute;
+  z-index: var(--wds-z-tooltip);
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: var(--wds-space-3xs) var(--wds-space-xs);
+  background: var(--wds-neutral-900);
+  color: #fff;
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-medium);
+  white-space: nowrap;
+  border-radius: var(--wds-radius-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--wds-duration-fast) var(--wds-ease), transform var(--wds-duration-fast) var(--wds-ease);
+}
+
+[data-wds-tooltip]:hover::after,
+[data-wds-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+[data-wds-tooltip][data-wds-tooltip-placement="bottom"]::after {
+  bottom: auto;
+  top: calc(100% + 6px);
+  transform: translateX(-50%) translateY(-4px);
+}
+[data-wds-tooltip][data-wds-tooltip-placement="bottom"]:hover::after,
+[data-wds-tooltip][data-wds-tooltip-placement="bottom"]:focus-visible::after {
+  transform: translateX(-50%) translateY(0);
+}
+
+[data-wds-tooltip][data-wds-tooltip-placement="left"]::after {
+  bottom: auto;
+  left: auto;
+  top: 50%;
+  right: calc(100% + 6px);
+  transform: translateY(-50%) translateX(4px);
+}
+[data-wds-tooltip][data-wds-tooltip-placement="left"]:hover::after,
+[data-wds-tooltip][data-wds-tooltip-placement="left"]:focus-visible::after {
+  transform: translateY(-50%) translateX(0);
+}
+
+[data-wds-tooltip][data-wds-tooltip-placement="right"]::after {
+  bottom: auto;
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+}
+[data-wds-tooltip][data-wds-tooltip-placement="right"]:hover::after,
+[data-wds-tooltip][data-wds-tooltip-placement="right"]:focus-visible::after {
+  transform: translateY(-50%) translateX(0);
+}

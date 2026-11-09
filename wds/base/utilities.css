@@ -1,0 +1,99 @@
+/* WDS Utilities — small composable helpers. Prefer component classes first;
+   use these for one-off layout tweaks instead of writing new bespoke CSS. */
+
+.wds-container {
+  width: 100%;
+  max-width: var(--wds-container-max);
+  margin-inline: auto;
+  padding-inline: var(--wds-space-lg);
+}
+
+.wds-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wds-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wds-hidden {
+  display: none !important;
+}
+
+/* Flex / stack / cluster layout primitives */
+.wds-flex {
+  display: flex;
+}
+
+.wds-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.wds-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.wds-items-center {
+  align-items: center;
+}
+
+.wds-items-start {
+  align-items: flex-start;
+}
+
+.wds-justify-between {
+  justify-content: space-between;
+}
+
+.wds-justify-end {
+  justify-content: flex-end;
+}
+
+.wds-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.wds-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.wds-grow {
+  flex-grow: 1;
+}
+
+/* Gap scale mirrors spacing tokens */
+.wds-gap-3xs { gap: var(--wds-space-3xs); }
+.wds-gap-2xs { gap: var(--wds-space-2xs); }
+.wds-gap-xs  { gap: var(--wds-space-xs); }
+.wds-gap-sm  { gap: var(--wds-space-sm); }
+.wds-gap-md  { gap: var(--wds-space-md); }
+.wds-gap-lg  { gap: var(--wds-space-lg); }
+.wds-gap-xl  { gap: var(--wds-space-xl); }
+
+.wds-mt-sm { margin-top: var(--wds-space-sm); }
+.wds-mt-md { margin-top: var(--wds-space-md); }
+.wds-mt-lg { margin-top: var(--wds-space-lg); }
+.wds-mb-sm { margin-bottom: var(--wds-space-sm); }
+.wds-mb-md { margin-bottom: var(--wds-space-md); }
+.wds-mb-lg { margin-bottom: var(--wds-space-lg); }
+
+.wds-text-muted { color: var(--wds-text-muted); }
+.wds-text-subtle { color: var(--wds-text-subtle); }
+.wds-text-sm { font-size: var(--wds-text-sm); }
+.wds-text-xs { font-size: var(--wds-text-xs); }
+.wds-font-medium { font-weight: var(--wds-font-weight-medium); }
+.wds-font-semibold { font-weight: var(--wds-font-weight-semibold); }

@@ -1,0 +1,101 @@
+/* WDS Card & Stat Card */
+
+.wds-card {
+  background: var(--wds-surface);
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-lg);
+  box-shadow: var(--wds-shadow-sm);
+}
+
+.wds-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wds-space-sm);
+  padding: var(--wds-space-md) var(--wds-space-lg);
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+}
+
+.wds-card-title {
+  font-size: var(--wds-text-md);
+  font-weight: var(--wds-font-weight-semibold);
+}
+
+.wds-card-subtitle {
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}
+
+.wds-card-body {
+  padding: var(--wds-space-lg);
+}
+
+.wds-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--wds-space-xs);
+  padding: var(--wds-space-sm) var(--wds-space-lg);
+  border-top: var(--wds-border-width) solid var(--wds-border);
+  background: var(--wds-surface-sunken);
+  border-radius: 0 0 var(--wds-radius-lg) var(--wds-radius-lg);
+}
+
+/* Stat card: label / value / trend, grid of these forms a dashboard summary row */
+.wds-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wds-space-xs);
+  padding: var(--wds-space-lg);
+  background: var(--wds-surface);
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-lg);
+  box-shadow: var(--wds-shadow-sm);
+}
+
+.wds-stat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wds-stat-card-label {
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+  font-weight: var(--wds-font-weight-medium);
+}
+
+.wds-stat-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--wds-radius-md);
+  background: var(--wds-primary-subtle);
+  color: var(--wds-primary);
+}
+
+.wds-stat-card-value {
+  font-size: var(--wds-text-3xl);
+  font-weight: var(--wds-font-weight-bold);
+  line-height: var(--wds-line-height-tight);
+}
+
+.wds-stat-card-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wds-space-3xs);
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-medium);
+}
+
+.wds-stat-card-trend--up { color: var(--wds-success); }
+.wds-stat-card-trend--down { color: var(--wds-danger); }
+.wds-stat-card-trend--flat { color: var(--wds-text-muted); }
+
+.wds-stat-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--wds-space-md);
+}

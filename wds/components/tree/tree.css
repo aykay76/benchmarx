@@ -1,0 +1,86 @@
+/* WDS Tree — hierarchical tree view (environments, folders, org charts, etc.) */
+
+wds-tree {
+  display: block;
+  font-size: var(--wds-text-sm);
+}
+
+wds-tree-item {
+  display: block;
+}
+
+.wds-tree-row {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-2xs);
+  padding: var(--wds-space-2xs) var(--wds-space-xs);
+  border-radius: var(--wds-radius-sm);
+  cursor: pointer;
+  color: var(--wds-text);
+}
+
+.wds-tree-row:hover {
+  background: var(--wds-surface-sunken);
+}
+
+wds-tree-item[aria-selected="true"] > .wds-tree-row {
+  background: var(--wds-primary-subtle);
+  color: var(--wds-primary);
+  font-weight: var(--wds-font-weight-medium);
+}
+
+wds-tree-item:focus {
+  outline: none;
+}
+
+wds-tree-item:focus-visible > .wds-tree-row {
+  outline: 2px solid var(--wds-focus-ring);
+  outline-offset: -2px;
+}
+
+.wds-tree-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: var(--wds-text-subtle);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: transform var(--wds-duration-fast) var(--wds-ease);
+}
+
+wds-tree-item[aria-expanded="true"] > .wds-tree-row .wds-tree-toggle {
+  transform: rotate(90deg);
+}
+
+.wds-tree-toggle-spacer {
+  flex: none;
+  width: 18px;
+}
+
+.wds-tree-icon {
+  flex: none;
+  color: var(--wds-text-muted);
+}
+
+.wds-tree-label {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wds-tree-children {
+  display: none;
+  padding-left: var(--wds-space-md);
+  border-left: var(--wds-border-width) solid var(--wds-border);
+  margin-left: 9px;
+}
+
+wds-tree-item[aria-expanded="true"] > .wds-tree-children {
+  display: block;
+}

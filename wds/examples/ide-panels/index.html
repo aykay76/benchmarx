@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDE panels example — WDS</title>
+  <script>
+    const t = localStorage.getItem("wds-theme");
+    if (t) document.documentElement.setAttribute("data-wds-theme", t);
+  </script>
+  <link rel="stylesheet" href="../../wds.css" />
+  <link rel="stylesheet" href="./ide.css" />
+  <script type="module" src="../../wds.js"></script>
+</head>
+<body class="ide-page">
+  <div class="ide-shell">
+    <div class="ide-activitybar">
+      <button class="ide-activity-btn active" data-wds-tooltip="Explorer" data-wds-tooltip-placement="right">
+        <wds-icon name="file" size="18"></wds-icon>
+      </button>
+      <button class="ide-activity-btn" data-wds-tooltip="Search" data-wds-tooltip-placement="right">
+        <wds-icon name="search" size="18"></wds-icon>
+      </button>
+      <button class="ide-activity-btn" data-wds-tooltip="Source control" data-wds-tooltip-placement="right">
+        <wds-icon name="refresh" size="18"></wds-icon>
+      </button>
+      <div class="ide-activity-spacer"></div>
+      <button class="ide-activity-btn" data-wds-tooltip="Settings" data-wds-tooltip-placement="right">
+        <wds-icon name="settings" size="18"></wds-icon>
+      </button>
+    </div>
+
+    <div class="ide-sidebar" id="sidebar" style="width: 240px">
+      <div class="ide-sidebar-header">Explorer</div>
+      <wds-tree>
+        <wds-tree-item label="src" icon="folder" expanded>
+          <wds-tree-item label="components" icon="folder" expanded>
+            <wds-tree-item label="button.css" icon="file"></wds-tree-item>
+            <wds-tree-item label="app.js" icon="file"></wds-tree-item>
+          </wds-tree-item>
+          <wds-tree-item label="index.html" icon="file"></wds-tree-item>
+          <wds-tree-item label="styles.css" icon="file"></wds-tree-item>
+        </wds-tree-item>
+        <wds-tree-item label="package.json" icon="file"></wds-tree-item>
+        <wds-tree-item label="README.md" icon="file"></wds-tree-item>
+      </wds-tree>
+    </div>
+
+    <div class="ide-resizer ide-resizer--vertical" data-resizer="sidebar"></div>
+
+    <div class="ide-main">
+      <div class="ide-editor">
+        <wds-tabs class="ide-tabs">
+          <wds-tab label="index.html" active><pre class="ide-code"><code><span class="ide-line-number">1</span>&lt;!doctype html&gt;
+<span class="ide-line-number">2</span>&lt;html lang="en"&gt;
+<span class="ide-line-number">3</span>&lt;head&gt;
+<span class="ide-line-number">4</span>  &lt;title&gt;My App&lt;/title&gt;
+<span class="ide-line-number">5</span>&lt;/head&gt;
+<span class="ide-line-number">6</span>&lt;body&gt;
+<span class="ide-line-number">7</span>  &lt;h1&gt;Hello, world&lt;/h1&gt;
+<span class="ide-line-number">8</span>&lt;/body&gt;
+<span class="ide-line-number">9</span>&lt;/html&gt;</code></pre></wds-tab>
+          <wds-tab label="app.js"><pre class="ide-code"><code><span class="ide-line-number">1</span>function greet(name) {
+<span class="ide-line-number">2</span>  return `Hello, ${name}!`;
+<span class="ide-line-number">3</span>}
+<span class="ide-line-number">4</span>
+<span class="ide-line-number">5</span>console.log(greet("world"));</code></pre></wds-tab>
+          <wds-tab label="styles.css"><pre class="ide-code"><code><span class="ide-line-number">1</span>body {
+<span class="ide-line-number">2</span>  font-family: sans-serif;
+<span class="ide-line-number">3</span>}</code></pre></wds-tab>
+        </wds-tabs>
+      </div>
+
+      <div class="ide-resizer ide-resizer--horizontal" data-resizer="panel"></div>
+
+      <div class="ide-panel" id="bottom-panel" style="height: 200px">
+        <wds-tabs class="ide-tabs">
+          <wds-tab label="Terminal" active>
+            <div class="ide-terminal">
+              <p><span class="ide-prompt">➜</span> npm run build</p>
+              <p>Build completed in 214ms</p>
+              <p><span class="ide-prompt">➜</span> <span></span></p>
+            </div>
+          </wds-tab>
+          <wds-tab label="Problems">
+            <p class="wds-text-muted wds-text-sm">No problems detected in the workspace.</p>
+          </wds-tab>
+          <wds-tab label="Output">
+            <p class="wds-text-muted wds-text-sm">[12:04:02] Ready.</p>
+          </wds-tab>
+        </wds-tabs>
+      </div>
+    </div>
+  </div>
+
+  <div class="ide-statusbar">
+    <span><wds-icon name="check-circle" size="12"></wds-icon> main</span>
+    <span><wds-icon name="check" size="12"></wds-icon> No issues</span>
+    <div class="wds-navbar-spacer"></div>
+    <span>Ln 7, Col 3</span>
+    <span>UTF-8</span>
+    <span>HTML</span>
+  </div>
+
+  <script type="module" src="./ide.js"></script>
+</body>
+</html>

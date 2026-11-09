@@ -1,0 +1,80 @@
+/* WDS Base — typography and element defaults built on tokens.css */
+
+body {
+  font-family: var(--wds-font-sans);
+  font-size: var(--wds-text-base);
+  font-weight: var(--wds-font-weight-normal);
+  color: var(--wds-text);
+  background: var(--wds-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--wds-font-weight-semibold);
+  line-height: var(--wds-line-height-tight);
+  color: var(--wds-text);
+}
+
+h1 {
+  font-size: var(--wds-text-3xl);
+}
+
+h2 {
+  font-size: var(--wds-text-2xl);
+}
+
+h3 {
+  font-size: var(--wds-text-xl);
+}
+
+h4 {
+  font-size: var(--wds-text-lg);
+}
+
+h5 {
+  font-size: var(--wds-text-md);
+}
+
+h6 {
+  font-size: var(--wds-text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--wds-text-muted);
+}
+
+small {
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--wds-font-mono);
+  font-size: 0.9em;
+}
+
+code,
+kbd {
+  background: var(--wds-surface-sunken);
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-sm);
+  padding: 1px 5px;
+}
+
+a[href] {
+  color: var(--wds-text-link);
+}
+
+a[href]:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  border-top: var(--wds-border-width) solid var(--wds-border);
+}

@@ -1,21 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const root = document.documentElement;
-  const toggle = document.querySelector(".theme-toggle");
-  const icon = document.querySelector(".theme-icon");
-  const year = document.querySelector("#current-year");
-  const savedTheme = localStorage.getItem("benchmarx-theme");
-  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+import { theme } from "/wds/wds.js";
 
-  const setTheme = (theme) => {
-    root.dataset.theme = theme;
-    localStorage.setItem("benchmarx-theme", theme);
-    toggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} theme`);
-    icon.textContent = theme === "dark" ? "☼" : "☾";
-  };
+const root = document.documentElement;
+const toggle = document.querySelector("#theme-toggle");
+const icon = document.querySelector("#theme-icon");
+const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
 
-  setTheme(savedTheme || (prefersLight ? "light" : "dark"));
-  toggle.addEventListener("click", () => {
-    setTheme(root.dataset.theme === "dark" ? "light" : "dark");
-  });
-  year.textContent = new Date().getFullYear();
+const setTheme = (mode) => {
+  theme.set(mode);
+  toggle.setAttribute("aria-label", `Switch to ${mode === "dark" ? "light" : "dark"} theme`);
+  icon.textContent = mode === "dark" ? "☼" : "☾";
+};
+
+setTheme(savedTheme === "dark" ? "dark" : "light");
+toggle.addEventListener("click", () => {
+  const mode = root.dataset.wdsTheme === "dark" ? "light" : "dark";
+  setTheme(mode);
+  localStorage.setItem("benchmarx-theme", mode);
 });
+
+document.querySelector("#current-year").textContent = new Date().getFullYear();

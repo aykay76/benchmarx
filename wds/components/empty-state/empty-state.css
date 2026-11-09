@@ -1,0 +1,40 @@
+/* WDS Empty State — used inside tables, lists, trees, panels when there's no data */
+
+.wds-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--wds-space-xs);
+  padding: var(--wds-space-2xl) var(--wds-space-lg);
+  color: var(--wds-text-muted);
+}
+
+.wds-empty-state-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--wds-radius-full);
+  background: var(--wds-surface-sunken);
+  color: var(--wds-text-subtle);
+  margin-bottom: var(--wds-space-xs);
+}
+
+.wds-empty-state-title {
+  font-size: var(--wds-text-md);
+  font-weight: var(--wds-font-weight-semibold);
+  color: var(--wds-text);
+}
+
+.wds-empty-state-description {
+  font-size: var(--wds-text-sm);
+  max-width: 40ch;
+}
+
+.wds-empty-state-actions {
+  margin-top: var(--wds-space-sm);
+  display: flex;
+  gap: var(--wds-space-xs);
+}

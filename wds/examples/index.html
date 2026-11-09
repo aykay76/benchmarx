@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WDS Examples</title>
+  <script>
+    const t = localStorage.getItem("wds-theme");
+    if (t) document.documentElement.setAttribute("data-wds-theme", t);
+  </script>
+  <link rel="stylesheet" href="../wds.css" />
+  <link rel="stylesheet" href="./examples.css" />
+  <script type="module" src="../wds.js"></script>
+</head>
+<body>
+  <nav class="wds-navbar">
+    <div class="wds-navbar-brand"><wds-icon name="home"></wds-icon> WDS Examples</div>
+    <div class="wds-navbar-spacer"></div>
+    <a class="wds-btn wds-btn--ghost wds-btn--sm" href="../docs/index.html">Component gallery</a>
+  </nav>
+
+  <div class="examples-hero">
+    <h1>Archetypal applications</h1>
+    <p class="wds-text-muted">
+      Full page skeletons composed entirely from WDS components — no build step, no framework.
+      Copy a folder and start replacing the placeholder content.
+    </p>
+  </div>
+
+  <div class="wds-container">
+    <div class="examples-grid">
+      <div class="wds-card">
+        <div class="wds-card-header">
+          <span class="wds-card-title">Company website</span>
+        </div>
+        <div class="wds-card-body">
+          <p class="wds-text-muted">
+            Marketing site archetype — sticky top nav, hero, feature grid, pricing, and footer across
+            multiple static pages.
+          </p>
+          <div class="example-card-tags">
+            <span class="wds-badge wds-badge--neutral">Multi-page</span>
+            <span class="wds-badge wds-badge--neutral">No JS required</span>
+          </div>
+        </div>
+        <div class="wds-card-footer">
+          <a class="wds-btn wds-btn--primary wds-btn--sm" href="./company-website/index.html">Open example</a>
+        </div>
+      </div>
+
+      <div class="wds-card">
+        <div class="wds-card-header">
+          <span class="wds-card-title">Resizable IDE panels</span>
+        </div>
+        <div class="wds-card-body">
+          <p class="wds-text-muted">
+            VS Code style shell — activity bar, resizable file explorer, tabbed editor, and a resizable
+            bottom terminal panel.
+          </p>
+          <div class="example-card-tags">
+            <span class="wds-badge wds-badge--neutral">wds-tree</span>
+            <span class="wds-badge wds-badge--neutral">wds-tabs</span>
+            <span class="wds-badge wds-badge--neutral">Drag to resize</span>
+          </div>
+        </div>
+        <div class="wds-card-footer">
+          <a class="wds-btn wds-btn--primary wds-btn--sm" href="./ide-panels/index.html">Open example</a>
+        </div>
+      </div>
+
+      <div class="wds-card">
+        <div class="wds-card-header">
+          <span class="wds-card-title">Team chat</span>
+        </div>
+        <div class="wds-card-body">
+          <p class="wds-text-muted">
+            Discord style collaboration shell — server rail, channel list, message thread, and a member
+            sidebar with presence.
+          </p>
+          <div class="example-card-tags">
+            <span class="wds-badge wds-badge--neutral">wds-avatar</span>
+            <span class="wds-badge wds-badge--neutral">Presence dots</span>
+          </div>
+        </div>
+        <div class="wds-card-footer">
+          <a class="wds-btn wds-btn--primary wds-btn--sm" href="./chat-app/index.html">Open example</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

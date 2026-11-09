@@ -1,0 +1,289 @@
+/* Team chat example — Discord style collaboration shell.
+   Layout primitives only; not part of core WDS since server rails / message
+   threads are specific to this archetype. Everything else (avatars, badges,
+   inputs, buttons) is plain WDS. */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--wds-font-sans);
+  color: var(--wds-text);
+  background: var(--wds-bg);
+}
+
+.chat-shell {
+  display: flex;
+  height: 100vh;
+}
+
+/* Server rail */
+.chat-server-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--wds-space-sm);
+  width: 64px;
+  flex: none;
+  padding-block: var(--wds-space-sm);
+  background: var(--wds-surface-sunken);
+  border-right: var(--wds-border-width) solid var(--wds-border);
+  overflow-y: auto;
+}
+
+.chat-server-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--wds-radius-xl);
+  background: var(--wds-surface);
+  color: var(--wds-text-muted);
+  font-weight: var(--wds-font-weight-semibold);
+  font-size: var(--wds-text-sm);
+  transition: border-radius var(--wds-duration-fast) var(--wds-ease), color var(--wds-duration-fast) var(--wds-ease);
+}
+
+.chat-server-btn:hover,
+.chat-server-btn.active {
+  border-radius: var(--wds-radius-md);
+  color: var(--wds-primary);
+}
+
+.chat-server-btn.active {
+  background: var(--wds-primary-subtle);
+}
+
+.chat-server-divider {
+  width: 32px;
+  height: var(--wds-border-width);
+  background: var(--wds-border);
+}
+
+/* Channel sidebar */
+.chat-channel-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  flex: none;
+  background: var(--wds-surface);
+  border-right: var(--wds-border-width) solid var(--wds-border);
+}
+
+.chat-channel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  flex: none;
+  padding-inline: var(--wds-space-md);
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+  font-weight: var(--wds-font-weight-semibold);
+}
+
+.chat-channel-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--wds-space-sm);
+}
+
+.chat-channel-group-label {
+  padding: var(--wds-space-xs) var(--wds-space-sm) var(--wds-space-2xs);
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--wds-text-subtle);
+}
+
+.chat-channel-link {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  padding: var(--wds-space-2xs) var(--wds-space-sm);
+  border-radius: var(--wds-radius-md);
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}
+
+.chat-channel-link:hover {
+  background: var(--wds-surface-sunken);
+  color: var(--wds-text);
+}
+
+.chat-channel-link[aria-current="page"] {
+  background: var(--wds-primary-subtle);
+  color: var(--wds-primary);
+  font-weight: var(--wds-font-weight-medium);
+}
+
+.chat-user-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  flex: none;
+  height: 52px;
+  padding-inline: var(--wds-space-sm);
+  background: var(--wds-surface-sunken);
+  border-top: var(--wds-border-width) solid var(--wds-border);
+}
+
+.chat-user-bar-name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.chat-user-bar-name small {
+  color: var(--wds-text-muted);
+}
+
+.chat-user-bar-actions {
+  display: flex;
+  gap: var(--wds-space-3xs);
+  margin-left: auto;
+}
+
+/* Main column */
+.chat-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-sm);
+  height: 48px;
+  flex: none;
+  padding-inline: var(--wds-space-md);
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+}
+
+.chat-header-topic {
+  color: var(--wds-text-muted);
+  font-size: var(--wds-text-sm);
+  padding-left: var(--wds-space-sm);
+  margin-left: var(--wds-space-sm);
+  border-left: var(--wds-border-width) solid var(--wds-border);
+}
+
+.chat-header-actions {
+  display: flex;
+  gap: var(--wds-space-3xs);
+  margin-left: auto;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--wds-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--wds-space-md);
+}
+
+.chat-message {
+  display: flex;
+  gap: var(--wds-space-sm);
+}
+
+.chat-message-body {
+  min-width: 0;
+}
+
+.chat-message-meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--wds-space-xs);
+}
+
+.chat-message-author {
+  font-weight: var(--wds-font-weight-semibold);
+  font-size: var(--wds-text-sm);
+}
+
+.chat-message-time {
+  font-size: var(--wds-text-xs);
+  color: var(--wds-text-subtle);
+}
+
+.chat-message-text {
+  font-size: var(--wds-text-sm);
+  line-height: var(--wds-line-height-normal);
+  white-space: pre-wrap;
+}
+
+.chat-composer {
+  flex: none;
+  padding: var(--wds-space-sm) var(--wds-space-md) var(--wds-space-md);
+}
+
+.chat-composer-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  background: var(--wds-surface-sunken);
+  border-radius: var(--wds-radius-lg);
+  padding-inline: var(--wds-space-sm);
+}
+
+.chat-composer-input {
+  flex: 1;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--wds-text);
+  font-size: var(--wds-text-sm);
+  font-family: inherit;
+}
+
+.chat-composer-input:focus {
+  outline: none;
+}
+
+/* Member sidebar */
+.chat-member-sidebar {
+  width: 220px;
+  flex: none;
+  overflow-y: auto;
+  padding: var(--wds-space-sm);
+  background: var(--wds-surface);
+  border-left: var(--wds-border-width) solid var(--wds-border);
+}
+
+.chat-member-group-label {
+  padding: var(--wds-space-xs) var(--wds-space-sm) var(--wds-space-2xs);
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--wds-text-subtle);
+}
+
+.chat-member {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  padding: var(--wds-space-2xs) var(--wds-space-sm);
+  border-radius: var(--wds-radius-md);
+  font-size: var(--wds-text-sm);
+}
+
+.chat-member:hover {
+  background: var(--wds-surface-sunken);
+}
+
+.chat-member--offline {
+  opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  .chat-member-sidebar {
+    display: none;
+  }
+}

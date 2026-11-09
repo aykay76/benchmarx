@@ -1,0 +1,210 @@
+/*
+ * WDS Design Tokens
+ * Single source of truth for color, spacing, type, radius, shadow, motion and z-index.
+ * Never hardcode raw values in component CSS — always reference var(--wds-*).
+ */
+
+:root {
+  /* ---- Raw color scales (do not use directly in components) ---- */
+  --wds-neutral-0: #ffffff;
+  --wds-neutral-50: #f8fafc;
+  --wds-neutral-100: #f1f5f9;
+  --wds-neutral-200: #e2e8f0;
+  --wds-neutral-300: #cbd5e1;
+  --wds-neutral-400: #94a3b8;
+  --wds-neutral-500: #64748b;
+  --wds-neutral-600: #475569;
+  --wds-neutral-700: #334155;
+  --wds-neutral-800: #1e293b;
+  --wds-neutral-900: #0f172a;
+  --wds-neutral-950: #020617;
+
+  --wds-brand-50: #eef2ff;
+  --wds-brand-100: #e0e7ff;
+  --wds-brand-200: #c7d2fe;
+  --wds-brand-300: #a5b4fc;
+  --wds-brand-400: #818cf8;
+  --wds-brand-500: #6366f1;
+  --wds-brand-600: #4f46e5;
+  --wds-brand-700: #4338ca;
+  --wds-brand-800: #3730a3;
+  --wds-brand-900: #312e81;
+
+  --wds-green-100: #dcfce7;
+  --wds-green-500: #22c55e;
+  --wds-green-600: #16a34a;
+  --wds-green-700: #15803d;
+
+  --wds-amber-100: #fef3c7;
+  --wds-amber-500: #f59e0b;
+  --wds-amber-600: #d97706;
+  --wds-amber-700: #b45309;
+
+  --wds-red-100: #fee2e2;
+  --wds-red-500: #ef4444;
+  --wds-red-600: #dc2626;
+  --wds-red-700: #b91c1c;
+
+  --wds-blue-100: #dbeafe;
+  --wds-blue-500: #3b82f6;
+  --wds-blue-600: #2563eb;
+  --wds-blue-700: #1d4ed8;
+
+  /* ---- Semantic tokens (use these) ---- */
+  --wds-bg: var(--wds-neutral-50);
+  --wds-surface: var(--wds-neutral-0);
+  --wds-surface-raised: var(--wds-neutral-0);
+  --wds-surface-sunken: var(--wds-neutral-100);
+  --wds-border: var(--wds-neutral-200);
+  --wds-border-strong: var(--wds-neutral-300);
+
+  --wds-text: var(--wds-neutral-900);
+  --wds-text-muted: var(--wds-neutral-500);
+  --wds-text-subtle: var(--wds-neutral-400);
+  --wds-text-on-brand: #ffffff;
+  --wds-text-link: var(--wds-brand-600);
+
+  --wds-primary: var(--wds-brand-600);
+  --wds-primary-hover: var(--wds-brand-700);
+  --wds-primary-active: var(--wds-brand-800);
+  --wds-primary-subtle: var(--wds-brand-50);
+  --wds-primary-subtle-border: var(--wds-brand-200);
+
+  --wds-success: var(--wds-green-600);
+  --wds-success-subtle: var(--wds-green-100);
+  --wds-warning: var(--wds-amber-600);
+  --wds-warning-subtle: var(--wds-amber-100);
+  --wds-danger: var(--wds-red-600);
+  --wds-danger-hover: var(--wds-red-700);
+  --wds-danger-subtle: var(--wds-red-100);
+  --wds-info: var(--wds-blue-600);
+  --wds-info-subtle: var(--wds-blue-100);
+
+  --wds-focus-ring: var(--wds-brand-500);
+  --wds-overlay: rgb(15 23 42 / 45%);
+
+  /* ---- Spacing (t-shirt scale, 4px base unit) ---- */
+  --wds-space-3xs: 2px;
+  --wds-space-2xs: 4px;
+  --wds-space-xs: 8px;
+  --wds-space-sm: 12px;
+  --wds-space-md: 16px;
+  --wds-space-lg: 24px;
+  --wds-space-xl: 32px;
+  --wds-space-2xl: 48px;
+  --wds-space-3xl: 64px;
+
+  /* ---- Typography ---- */
+  --wds-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --wds-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --wds-text-xs: 12px;
+  --wds-text-sm: 13px;
+  --wds-text-base: 14px;
+  --wds-text-md: 16px;
+  --wds-text-lg: 18px;
+  --wds-text-xl: 22px;
+  --wds-text-2xl: 28px;
+  --wds-text-3xl: 34px;
+
+  --wds-font-weight-normal: 400;
+  --wds-font-weight-medium: 500;
+  --wds-font-weight-semibold: 600;
+  --wds-font-weight-bold: 700;
+
+  --wds-line-height-tight: 1.25;
+  --wds-line-height-normal: 1.5;
+
+  /* ---- Radius ---- */
+  --wds-radius-sm: 6px;
+  --wds-radius-md: 8px;
+  --wds-radius-lg: 12px;
+  --wds-radius-xl: 16px;
+  --wds-radius-full: 999px;
+
+  /* ---- Shadow ---- */
+  --wds-shadow-sm: 0 1px 2px rgb(15 23 42 / 6%);
+  --wds-shadow-md: 0 4px 12px rgb(15 23 42 / 8%), 0 1px 2px rgb(15 23 42 / 6%);
+  --wds-shadow-lg: 0 12px 24px rgb(15 23 42 / 12%), 0 2px 6px rgb(15 23 42 / 6%);
+  --wds-shadow-xl: 0 24px 48px rgb(15 23 42 / 18%);
+
+  /* ---- Motion ---- */
+  --wds-duration-fast: 120ms;
+  --wds-duration-base: 200ms;
+  --wds-duration-slow: 320ms;
+  --wds-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- Z-index scale ---- */
+  --wds-z-dropdown: 1000;
+  --wds-z-sticky: 1100;
+  --wds-z-drawer: 1200;
+  --wds-z-modal-backdrop: 1300;
+  --wds-z-modal: 1310;
+  --wds-z-toast: 1400;
+  --wds-z-tooltip: 1500;
+
+  /* ---- Layout ---- */
+  --wds-container-max: 1200px;
+  --wds-sidenav-width: 260px;
+  --wds-border-width: 1px;
+}
+
+/* Dark theme: automatic via prefers-color-scheme (unless explicitly overridden with
+   [data-wds-theme="light"]), or forced on with [data-wds-theme="dark"]. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-wds-theme="light"]):not([data-wds-theme="dark"]) {
+    color-scheme: dark;
+    --wds-bg: var(--wds-neutral-950);
+    --wds-surface: var(--wds-neutral-900);
+    --wds-surface-raised: var(--wds-neutral-800);
+    --wds-surface-sunken: var(--wds-neutral-950);
+    --wds-border: var(--wds-neutral-700);
+    --wds-border-strong: var(--wds-neutral-600);
+
+    --wds-text: var(--wds-neutral-50);
+    --wds-text-muted: var(--wds-neutral-400);
+    --wds-text-subtle: var(--wds-neutral-500);
+    --wds-text-link: var(--wds-brand-300);
+
+    --wds-primary: var(--wds-brand-500);
+    --wds-primary-hover: var(--wds-brand-400);
+    --wds-primary-active: var(--wds-brand-300);
+    --wds-primary-subtle: rgb(99 102 241 / 15%);
+    --wds-primary-subtle-border: rgb(99 102 241 / 35%);
+
+    --wds-success-subtle: rgb(34 197 94 / 15%);
+    --wds-warning-subtle: rgb(245 158 11 / 15%);
+    --wds-danger-subtle: rgb(239 68 68 / 15%);
+    --wds-info-subtle: rgb(59 130 246 / 15%);
+
+    --wds-overlay: rgb(2 6 23 / 65%);
+  }
+}
+
+:root[data-wds-theme="dark"] {
+  color-scheme: dark;
+  --wds-bg: var(--wds-neutral-950);
+  --wds-surface: var(--wds-neutral-900);
+  --wds-surface-raised: var(--wds-neutral-800);
+  --wds-surface-sunken: var(--wds-neutral-950);
+  --wds-border: var(--wds-neutral-700);
+  --wds-border-strong: var(--wds-neutral-600);
+
+  --wds-text: var(--wds-neutral-50);
+  --wds-text-muted: var(--wds-neutral-400);
+  --wds-text-subtle: var(--wds-neutral-500);
+  --wds-text-link: var(--wds-brand-300);
+
+  --wds-primary: var(--wds-brand-500);
+  --wds-primary-hover: var(--wds-brand-400);
+  --wds-primary-active: var(--wds-brand-300);
+  --wds-primary-subtle: rgb(99 102 241 / 15%);
+  --wds-primary-subtle-border: rgb(99 102 241 / 35%);
+
+  --wds-success-subtle: rgb(34 197 94 / 15%);
+  --wds-warning-subtle: rgb(245 158 11 / 15%);
+  --wds-danger-subtle: rgb(239 68 68 / 15%);
+  --wds-info-subtle: rgb(59 130 246 / 15%);
+
+  --wds-overlay: rgb(2 6 23 / 65%);
+}

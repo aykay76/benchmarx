@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Acme</title>
+  <script>
+    const t = localStorage.getItem("wds-theme");
+    if (t) document.documentElement.setAttribute("data-wds-theme", t);
+  </script>
+  <link rel="stylesheet" href="../../wds.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="../../wds.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="wds-navbar site-navbar">
+      <a class="wds-navbar-brand" href="./index.html"><wds-icon name="home"></wds-icon> Acme</a>
+      <div class="site-nav-links">
+        <a href="./index.html#features">Features</a>
+        <a href="./index.html#pricing">Pricing</a>
+        <a href="./about.html" aria-current="page">About</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+      <div class="wds-navbar-spacer"></div>
+      <a class="wds-btn wds-btn--ghost wds-btn--sm" href="./contact.html">Log in</a>
+      <a class="wds-btn wds-btn--primary wds-btn--sm" href="./contact.html">Get started</a>
+    </nav>
+  </header>
+
+  <main class="content-page">
+    <h1>We're building the operating system for modern teams</h1>
+    <p class="wds-text-muted">
+      Acme started in 2019 with a simple idea: teams shouldn't need ten different tools to get work
+      done. Today thousands of companies run their planning, execution and reporting on Acme.
+    </p>
+
+    <section class="page-section" style="padding-inline: 0;">
+      <div class="section-heading" style="margin-bottom: var(--wds-space-lg);">
+        <h2>Leadership team</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-member">
+          <span class="wds-avatar">JD</span>
+          <span class="wds-font-medium">Jamie Diaz</span>
+          <span class="wds-text-muted wds-text-sm">CEO &amp; Co-founder</span>
+        </div>
+        <div class="team-member">
+          <span class="wds-avatar">AK</span>
+          <span class="wds-font-medium">Alex Kim</span>
+          <span class="wds-text-muted wds-text-sm">CTO &amp; Co-founder</span>
+        </div>
+        <div class="team-member">
+          <span class="wds-avatar">RP</span>
+          <span class="wds-font-medium">Riya Patel</span>
+          <span class="wds-text-muted wds-text-sm">VP Product</span>
+        </div>
+        <div class="team-member">
+          <span class="wds-avatar">TN</span>
+          <span class="wds-font-medium">Tom Nilsson</span>
+          <span class="wds-text-muted wds-text-sm">VP Engineering</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <span>© 2026 Acme, Inc.</span>
+      <span>Built with WDS</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/**
+ * WDS — single CSS entry point. Import this one file:
+ *   <link rel="stylesheet" href="/wds/wds.css">
+ *
+ * (<wds-modal>, <wds-drawer> and <wds-toast-container> carry their own
+ * styles inside their Shadow DOM template, so there's nothing to import
+ * for those here.)
+ */
+
+@import url("./tokens/tokens.css");
+
+@import url("./base/reset.css");
+@import url("./base/base.css");
+@import url("./base/utilities.css");
+
+@import url("./icons/icons.css");
+
+@import url("./components/button/button.css");
+@import url("./components/forms/forms.css");
+@import url("./components/badge/badge.css");
+@import url("./components/avatar/avatar.css");
+@import url("./components/card/card.css");
+@import url("./components/list/list.css");
+@import url("./components/empty-state/empty-state.css");
+@import url("./components/skeleton/skeleton.css");
+@import url("./components/accordion/accordion.css");
+@import url("./components/tabs/tabs.css");
+@import url("./components/menu/menu.css");
+@import url("./components/tooltip/tooltip.css");
+@import url("./components/table/table.css");
+@import url("./components/tree/tree.css");
+@import url("./components/nav/nav.css");
+@import url("./components/pagination/pagination.css");
+@import url("./components/resource-panel/resource-panel.css");

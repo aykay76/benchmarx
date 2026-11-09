@@ -1,0 +1,54 @@
+/* WDS Pagination */
+
+.wds-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wds-space-md);
+  padding-top: var(--wds-space-sm);
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}
+
+.wds-pagination-info {
+  white-space: nowrap;
+}
+
+.wds-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-3xs);
+}
+
+.wds-pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding-inline: var(--wds-space-2xs);
+  border-radius: var(--wds-radius-md);
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text);
+  background: transparent;
+  border: var(--wds-border-width) solid transparent;
+}
+
+.wds-pagination-btn:hover:not(:disabled) {
+  background: var(--wds-surface-sunken);
+}
+
+.wds-pagination-btn[aria-current="page"] {
+  background: var(--wds-primary);
+  color: var(--wds-text-on-brand);
+}
+
+.wds-pagination-btn:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.wds-pagination-ellipsis {
+  padding-inline: var(--wds-space-2xs);
+  color: var(--wds-text-subtle);
+}

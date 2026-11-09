@@ -1,0 +1,77 @@
+/* WDS List — rows for simple lists / activity feeds / resource lists */
+
+.wds-list {
+  display: flex;
+  flex-direction: column;
+  background: var(--wds-surface);
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-lg);
+  overflow: hidden;
+}
+
+.wds-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-sm);
+  padding: var(--wds-space-sm) var(--wds-space-md);
+  border-bottom: var(--wds-border-width) solid var(--wds-border);
+}
+
+.wds-list-item:last-child {
+  border-bottom: 0;
+}
+
+a.wds-list-item,
+.wds-list-item--interactive {
+  cursor: pointer;
+  transition: background-color var(--wds-duration-fast) var(--wds-ease);
+}
+
+a.wds-list-item:hover,
+.wds-list-item--interactive:hover {
+  background: var(--wds-surface-sunken);
+}
+
+.wds-list-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--wds-radius-md);
+  background: var(--wds-surface-sunken);
+  color: var(--wds-text-muted);
+}
+
+.wds-list-item-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.wds-list-item-title {
+  font-size: var(--wds-text-sm);
+  font-weight: var(--wds-font-weight-medium);
+  color: var(--wds-text);
+}
+
+.wds-list-item-subtitle {
+  font-size: var(--wds-text-xs);
+  color: var(--wds-text-muted);
+}
+
+.wds-list-item-meta {
+  flex: none;
+  font-size: var(--wds-text-xs);
+  color: var(--wds-text-subtle);
+  white-space: nowrap;
+}
+
+.wds-list-item-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-3xs);
+  flex: none;
+}

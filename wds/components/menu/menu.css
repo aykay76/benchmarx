@@ -1,0 +1,70 @@
+/* WDS Menu — dropdown action menu (uses the native Popover API for
+   positioning/top-layer + light-dismiss, no manual outside-click JS needed) */
+
+wds-menu-button {
+  display: inline-flex;
+  position: relative;
+}
+
+/* Raw light-DOM source elements — hidden until wds-menu.js converts them
+   into real menu buttons inside the popover. */
+wds-menu-item,
+wds-menu-separator {
+  display: none;
+}
+
+
+.wds-menu {
+  position: fixed;
+  margin: 0;
+  padding: var(--wds-space-3xs);
+  min-width: 160px;
+  max-width: 280px;
+  background: var(--wds-surface);
+  border: var(--wds-border-width) solid var(--wds-border);
+  border-radius: var(--wds-radius-md);
+  box-shadow: var(--wds-shadow-lg);
+  z-index: var(--wds-z-dropdown);
+}
+
+.wds-menu:popover-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.wds-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-xs);
+  width: 100%;
+  padding: var(--wds-space-xs) var(--wds-space-sm);
+  border-radius: var(--wds-radius-sm);
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.wds-menu-item:hover,
+.wds-menu-item:focus-visible {
+  background: var(--wds-surface-sunken);
+}
+
+.wds-menu-item--danger {
+  color: var(--wds-danger);
+}
+
+.wds-menu-item--danger:hover {
+  background: var(--wds-danger-subtle);
+}
+
+.wds-menu-item:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.wds-menu-separator {
+  height: 1px;
+  margin: var(--wds-space-3xs) var(--wds-space-2xs);
+  background: var(--wds-border);
+}

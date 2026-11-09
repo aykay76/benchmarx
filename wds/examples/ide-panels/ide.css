@@ -1,0 +1,198 @@
+/* IDE resizable panels example — VS Code style shell.
+   Layout primitives only; not part of core WDS since they're specific to
+   this archetype (activity bar, drag-resizable panes, status bar). */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--wds-font-sans);
+  color: var(--wds-text);
+  background: var(--wds-bg);
+}
+
+.ide-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.ide-shell {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Activity bar */
+.ide-activitybar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--wds-space-2xs);
+  width: 48px;
+  flex: none;
+  padding-block: var(--wds-space-sm);
+  background: var(--wds-surface-sunken);
+  border-right: var(--wds-border-width) solid var(--wds-border);
+}
+
+.ide-activity-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--wds-radius-md);
+  color: var(--wds-text-muted);
+}
+
+.ide-activity-btn:hover {
+  background: var(--wds-surface);
+  color: var(--wds-text);
+}
+
+.ide-activity-btn.active {
+  color: var(--wds-primary);
+  background: var(--wds-primary-subtle);
+}
+
+.ide-activity-spacer {
+  flex: 1;
+}
+
+/* Sidebar (file explorer) */
+.ide-sidebar {
+  flex: none;
+  min-width: 160px;
+  max-width: 480px;
+  overflow: auto;
+  background: var(--wds-surface);
+  border-right: var(--wds-border-width) solid var(--wds-border);
+}
+
+.ide-sidebar-header {
+  padding: var(--wds-space-sm) var(--wds-space-md) var(--wds-space-xs);
+  font-size: var(--wds-text-xs);
+  font-weight: var(--wds-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--wds-text-subtle);
+}
+
+/* Drag handles */
+.ide-resizer {
+  flex: none;
+  background: transparent;
+  position: relative;
+}
+
+.ide-resizer--vertical {
+  width: 4px;
+  cursor: col-resize;
+}
+
+.ide-resizer--horizontal {
+  height: 4px;
+  cursor: row-resize;
+}
+
+.ide-resizer:hover,
+.ide-resizer.is-dragging {
+  background: var(--wds-primary);
+}
+
+/* Main column: editor + terminal */
+.ide-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.ide-editor {
+  flex: 1;
+  min-height: 80px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ide-panel {
+  flex: none;
+  height: 200px;
+  min-height: 80px;
+  max-height: 70vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--wds-surface);
+}
+
+.ide-tabs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.ide-tabs .wds-tablist {
+  flex: none;
+}
+
+.ide-tabs wds-tab {
+  flex: 1;
+  overflow: auto;
+  padding: var(--wds-space-md);
+}
+
+.ide-code {
+  margin: 0;
+  font-family: var(--wds-font-mono);
+  font-size: var(--wds-text-sm);
+  line-height: var(--wds-line-height-normal);
+  white-space: pre;
+}
+
+.ide-code .ide-line-number {
+  display: inline-block;
+  width: 2.5em;
+  color: var(--wds-text-subtle);
+  user-select: none;
+}
+
+.ide-terminal {
+  font-family: var(--wds-font-mono);
+  font-size: var(--wds-text-sm);
+  color: var(--wds-text-muted);
+}
+
+.ide-terminal .ide-prompt {
+  color: var(--wds-success);
+}
+
+.ide-terminal p {
+  margin: 0 0 var(--wds-space-2xs);
+}
+
+/* Status bar */
+.ide-statusbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--wds-space-md);
+  height: 24px;
+  padding-inline: var(--wds-space-md);
+  background: var(--wds-primary);
+  color: var(--wds-text-on-brand);
+  font-size: var(--wds-text-xs);
+}
+
+.ide-statusbar span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wds-space-3xs);
+}
+
+.ide-statusbar .wds-navbar-spacer {
+  flex: 1;
+}
