@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Most disappointing AI output is a context problem, not a model problem. What context really is, how to engineer it, and where teams get caught out.">
+    <title>Context is the product | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/" aria-current="page">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/insights/">Insights</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">02 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Agentic engineering</p>
+        <h1>Context <span>is the product.</span></h1>
+        <p class="ins-lead">If prompt engineering is how you ask, context engineering is what the system knows when it answers. Most disappointing output traces back to the second one.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">4 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="blame">
+          <h2 id="blame">It usually isn't the model</h2>
+          <p>When an AI result is poor, the model gets the blame. More often the cause is upstream: a business rule nobody wrote down, a stale document, two sources that disagree, or no definition of what "good" looks like.</p>
+          <p>Fix those and quality improves quickly, and, just as importantly, becomes repeatable across people and tasks.</p>
+        </section>
+
+        <section aria-labelledby="what">
+          <h2 id="what">What counts as context</h2>
+          <div class="ins-grid">
+            <div class="wds-card"><div class="wds-card-body"><h3>Instructions</h3><p>The objective, audience, scope and boundaries.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Reference material</h3><p>Docs, tickets, decisions, runbooks and policies.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Examples</h3><p>What good looks like, and what bad looks like.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Constraints</h3><p>Compliance, style, tooling and technical limits.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Live state</h3><p>Current code, open work, incidents and recent changes.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Success criteria</h3><p>The definition of done, and the checks it must pass.</p></div></div>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="loop">
+          <h2 id="loop">A loop, not a prompt</h2>
+          <p>Good context isn't written once. It's improved after every run, using what the failures reveal.</p>
+          <figure class="ins-figure">
+            <ol class="ins-flow">
+              <li class="ins-flow-step"><strong>Define the outcome</strong><span>One sentence describing success.</span></li>
+              <li class="ins-flow-step"><strong>Gather only what's needed</strong><span>The authoritative sources, not everything.</span></li>
+              <li class="ins-flow-step"><strong>Shape the package</strong><span>Brief, facts, examples, format, checks.</span></li>
+              <li class="ins-flow-step"><strong>Generate</strong><span>Prefer structured output to free text.</span></li>
+              <li class="ins-flow-step"><strong>Evaluate</strong><span>Score against a rubric, not a feeling.</span></li>
+              <li class="ins-flow-step"><strong>Improve the context</strong><span>Fix the inputs before swapping the model.</span></li>
+            </ol>
+            <figcaption>The last step feeds back into the second and third. That loop is where the quality comes from.</figcaption>
+          </figure>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="habits">
+          <h2 id="habits">Three habits that separate the teams that get repeatable results</h2>
+          <ol>
+            <li><strong>Treat context as a versioned asset.</strong> Briefs, good and bad examples, rubrics and a change log live in the repository next to the code, with an owner.</li>
+            <li><strong>Decide what wins when sources disagree.</strong> The code says one thing and the ticket says another. Choose a precedence, and surface the conflict instead of quietly picking a side.</li>
+            <li><strong>Budget on purpose.</strong> Leave room for the answer, protect constraints and acceptance criteria, and let the model ask for detail on demand rather than stuffing every document in up front.</li>
+          </ol>
+          <div class="ins-callout">
+            <p><strong>If you can't explain why an output failed, your context is still too vague.</strong> Failure analysis is the fastest way to improve it.</p>
+          </div>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the demo</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="Your constraints got truncated">
+              <p>When the window fills up, something gets cut. Trimming has to be a policy, not an accident: some content is never summarised, and if it can't fit, the right move is to escalate rather than silently drop it.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="The summary drifted from the source">
+              <p>Model-written summaries can introduce facts that weren't there. Quoting the source with a link is safer than paraphrasing it, and anything summarised needs a trail back to where it came from.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Everything seems relevant (it isn't)">
+              <p>More context is not better context. It raises cost and latency, and gives the model more contradictions to resolve. Deciding what to leave out, and measuring whether retrieval finds the right material, is real engineering.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Nobody owns it">
+              <p>Context decays like documentation. Without an owner, a review rhythm and a change log, last quarter's rules quietly become this quarter's wrong answers.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/insights/workflow-or-agent/"><span>Previous</span><strong>Workflow, agent, or both?</strong></a>
+        <a class="is-next" href="/insights/memory/"><span>Next</span><strong>Memory that doesn't hurt you</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Getting patchy results from AI?</h2>
+            <p>Send us an example of what went wrong. There's a good chance we can tell you which piece of context was missing.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

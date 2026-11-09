@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Giving an AI agent memory is the easy part. Scope, staleness, deletion and poisoning are where it goes wrong. A short guide to the three kinds of agent memory.">
+    <title>Memory that doesn't hurt you | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/" aria-current="page">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/insights/">Insights</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">03 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Agentic engineering</p>
+        <h1>Memory that <span>doesn't hurt you.</span></h1>
+        <p class="ins-lead">Memory turns a stateless assistant into something that accumulates knowledge. It also turns every mistake into something that persists.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">4 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="why">
+          <h2 id="why">Why agents need it</h2>
+          <p>Without memory, every session starts from zero. The agent re-fetches the same data, re-reasons the same conclusions, forgets what the user told it last week, and can't build on another agent's work.</p>
+          <p>Context decides what an agent knows <em>right now</em>. Memory decides what it knows <em>over time</em>.</p>
+        </section>
+
+        <section aria-labelledby="kinds">
+          <h2 id="kinds">Three kinds, three different risks</h2>
+          <div class="ins-grid">
+            <div class="wds-card"><div class="wds-card-body">
+              <h3>Working</h3>
+              <p>The scratchpad for this session: tool results, plan state, what has already been tried.</p>
+              <p class="ins-risk"><strong>Risk:</strong> bloat, and leaking state from one session into another.</p>
+            </div></div>
+            <div class="wds-card"><div class="wds-card-body">
+              <h3>Episodic</h3>
+              <p>What happened before: compressed history of past sessions and incidents.</p>
+              <p class="ins-risk"><strong>Risk:</strong> lossy compression drops the one detail that mattered.</p>
+            </div></div>
+            <div class="wds-card"><div class="wds-card-body">
+              <h3>Semantic</h3>
+              <p>What we know: facts, decisions, preferences and domain knowledge.</p>
+              <p class="ins-risk"><strong>Risk:</strong> stale facts, presented confidently.</p>
+            </div></div>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="easy">
+          <h2 id="easy">Remembering is the easy half</h2>
+          <p>Writing things down is simple. The engineering is in everything around it. Before anything is stored, you should know who owns it, who may read it, where it came from, when it was true, and how it gets removed.</p>
+          <div class="ins-callout">
+            <p><strong>Every memory needs five things:</strong> an owner, a scope, a source, a date, and a way to be forgotten.</p>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="scope">
+          <h2 id="scope">Who gets to see what</h2>
+          <p>Memory is rarely private to one agent. A system serving a user inside a team usually reads from several scopes and writes to the right one.</p>
+          <div class="wds-table-wrap">
+            <table class="wds-table">
+              <thead>
+                <tr><th>Scope</th><th>Holds</th><th>Read by</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Agent</strong></td><td>Internal state and agent-specific configuration</td><td>That agent only</td></tr>
+                <tr><td><strong>User</strong></td><td>Preferences, ongoing tasks, history</td><td>Agents acting for that user</td></tr>
+                <tr><td><strong>Team</strong></td><td>Shared decisions, runbooks, discovered facts</td><td>Every agent in the team, with controlled writes</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Getting these boundaries wrong is how one customer's information ends up in another customer's answer.</p>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the demo</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="A user asks you to delete their data">
+              <p>Can you find all of it? Raw records are the easy part. Summaries, embeddings and caches derived from them need to go too, and you need to be able to show that they did.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="A wrong fact is written once and trusted forever">
+              <p>Write-back needs provenance, a confidence level, an expiry and a way for newer knowledge to supersede older. Otherwise the agent's own mistakes become its source of truth.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="One poisoned document">
+              <p>Anything an agent reads can end up in memory, including content written by someone with bad intentions. Untrusted material shouldn't reach shared memory without a check, and memory needs to be treated as an attack surface.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Retrieval returns the wrong neighbour">
+              <p>"Similar" is not the same as "relevant". Filtering by scope and metadata before searching, and measuring how often the right item comes back, matters more than the choice of database.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Agents overwriting each other">
+              <p>Shared memory is convenient until concurrent writers disagree. Sometimes a shared store is right; sometimes an explicit handoff between agents is safer. Knowing which is a design decision, not a default.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/insights/context/"><span>Previous</span><strong>Context is the product</strong></a>
+        <a class="is-next" href="/insights/tools-and-trust/"><span>Next</span><strong>Tools, trust and oversight</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Want an agent that remembers?</h2>
+            <p>Let's work out what it should remember, for whom, for how long, and what happens when it's wrong.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

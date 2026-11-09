@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A demo shows an AI agent working once. Production needs evidence it works reliably. A short guide to evaluating, tracing and controlling the cost of agentic systems.">
+    <title>Proving it works | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/" aria-current="page">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/insights/">Insights</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">05 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Agentic engineering</p>
+        <h1>Proving <span>it works.</span></h1>
+        <p class="ins-lead">A demo shows an agent working once. Production needs evidence that it works reliably, and an early warning for when it stops.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">5 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="harder">
+          <h2 id="harder">Why agents are harder to test</h2>
+          <p>Ordinary software gives the same output for the same input. Agents don't. They're non-deterministic, they work in several steps, and the quality of the result depends on the route taken as well as the destination.</p>
+          <p>Changing a prompt, a tool, a data source or the model itself changes behaviour everywhere at once. Without a way to measure that, every change is a guess.</p>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="pyramid">
+          <h2 id="pyramid">A test pyramid for agents</h2>
+          <p>Lean on cheap, deterministic checks as far as possible, and save the expensive, judgement-based ones for what they alone can catch.</p>
+          <figure class="ins-figure">
+            <div class="ins-pyramid">
+              <div class="ins-pyramid-layer ins-pyramid-layer--1"><strong>Production review</strong><span>Sample real traces</span></div>
+              <div class="ins-pyramid-layer ins-pyramid-layer--2"><strong>Scenario evaluations</strong><span>Whole tasks, scored on outcome and route taken</span></div>
+              <div class="ins-pyramid-layer ins-pyramid-layer--3"><strong>Contract tests on model output</strong><span>Does the output match the schema, every time?</span></div>
+              <div class="ins-pyramid-layer ins-pyramid-layer--4"><strong>Unit tests for tools, policies and parsers</strong><span>Ordinary code, ordinary tests</span></div>
+            </div>
+            <figcaption>Lower layers are cheap, fast and deterministic. Higher layers are slower, costlier and rely on judgement. Most of your confidence should come from the bottom two.</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="measure">
+          <h2 id="measure">What to measure</h2>
+          <div class="ins-grid ins-grid--pair">
+            <div class="wds-card"><div class="wds-card-body"><h3>Outcome</h3><p>Did it complete the task, correctly and completely?</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Behaviour</h3><p>Did it use the right tools in a sensible order, and stay inside its limits?</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Cost and speed</h3><p>What does a <em>successful</em> task cost, and how long does it take?</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Safety</h3><p>Does it resist injected instructions and respect the boundaries it was given?</p></div></div>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="trace">
+          <h2 id="trace">If you can't see it, you can't fix it</h2>
+          <p>Every model call, tool call, state change and approval should be traced under a single run identifier, so a bad outcome can be replayed and explained. Alongside that you want spend broken down by workflow and customer, limits on rates, and a kill switch that someone actually knows how to use.</p>
+          <div class="ins-callout">
+            <p><strong>When something goes wrong, you need to answer one question quickly:</strong> was it the model, the context or the tool? Without traces, you're guessing.</p>
+          </div>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the demo</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="The prompt tweak that fixed one case">
+              <p>It also broke twelve others, and nobody noticed for a week. You need a regression set that runs on every change, including model upgrades, which are changes too.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="The judge that agrees with itself">
+              <p>Using a model to grade a model is useful and also biased. Judges need calibrating against human-labelled examples, and deterministic checks should go first wherever they can.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Cost per call versus cost per success">
+              <p>A cheaper model that needs three retries and a human fix can cost more than a stronger one that gets it right. Optimise the cost of getting a task done, not the price of a token.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="It worked last month">
+              <p>Providers update models, sources change and users find new ways to ask. Quality drifts unless something is measuring it continuously and someone owns the result.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/insights/tools-and-trust/"><span>Previous</span><strong>Tools, trust and oversight</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Have a demo you'd like to trust?</h2>
+            <p>We can help turn it into something with evidence behind it.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

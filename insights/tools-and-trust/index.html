@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Once an AI agent can act, a wrong answer becomes a wrong action. Designing tools, permissions, prompt-injection defences and human approval around the model.">
+    <title>Tools, trust and oversight | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/" aria-current="page">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/insights/">Insights</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">04 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Agentic engineering</p>
+        <h1>Tools, trust <span>and oversight.</span></h1>
+        <p class="ins-lead">The moment an agent can do things, not just say things, your risk model changes. A wrong answer is an annoyance. A wrong action is an incident.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">5 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="tools">
+          <h2 id="tools">Tools are your business, exposed to a model</h2>
+          <p>Tools are how an agent reads live data, calls APIs and changes things. A badly designed one gives the model a false sense of capability and produces unpredictable results. A few principles go a long way:</p>
+          <ul>
+            <li><strong>One job per tool.</strong> A tool that can create, update and delete is hard for anyone to reason about, model included.</li>
+            <li><strong>Separate reading from writing.</strong> Reads are safe to retry; writes have consequences, and the model should be able to tell which is which.</li>
+            <li><strong>Make writes safe to repeat.</strong> If a call times out and is retried, it shouldn't happen twice.</li>
+            <li><strong>Give each tool the narrowest scope it needs.</strong></li>
+            <li><strong>Return errors the agent can act on,</strong> not stack traces.</li>
+          </ul>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="boundary">
+          <h2 id="boundary">The model proposes. Your code decides.</h2>
+          <p>The safest design treats model output as an untrusted request, and puts deterministic checks between it and anything that matters.</p>
+          <figure class="ins-figure">
+            <ol class="ins-stack">
+              <li class="is-muted"><strong>Untrusted input</strong><span>User messages, web pages, documents, tool results</span></li>
+              <li><strong>Model proposes an action</strong><span>A structured request, not a command</span></li>
+              <li class="is-key"><strong>Policy and permissions</strong><span>Enforced in code, never in the prompt</span></li>
+              <li><strong>Human approval</strong><span>When the risk calls for it</span></li>
+              <li><strong>Tool executes</strong><span>With scoped, short-lived credentials</span></li>
+              <li class="is-muted"><strong>Audit record</strong><span>Who, what, why, and with what evidence</span></li>
+            </ol>
+            <figcaption>The highlighted layer is the one a clever prompt can't talk its way past.</figcaption>
+          </figure>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="injection">
+          <h2 id="injection">Anything the agent reads can give it orders</h2>
+          <p>A web page, an email or a ticket can contain text that looks like instructions, and a model can't reliably tell data from commands. A sternly worded system prompt doesn't fix this.</p>
+          <p>The defence is architectural: assume the agent will occasionally be fooled, and make sure a fooled agent still can't do damage. Least privilege, no ambient credentials, limits on what data can leave, and keeping the reading of untrusted content apart from privileged actions.</p>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="oversight">
+          <h2 id="oversight">Match oversight to consequence</h2>
+          <p>Human review isn't a sign that automation failed. It's a control, and it works best when it's reserved for the actions that deserve it.</p>
+          <div class="wds-table-wrap">
+            <table class="wds-table">
+              <thead>
+                <tr><th>Action</th><th>Example</th><th>Oversight</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Read-only</strong></td><td>Look up a deployment status</td><td>Log it</td></tr>
+                <tr><td><strong>Reversible write</strong></td><td>Open a draft pull request</td><td>Allow within scope; sample for review</td></tr>
+                <tr><td><strong>Hard to reverse</strong></td><td>Deploy, email a customer, change access</td><td>Explicit approval, with evidence shown</td></tr>
+                <tr><td><strong>Irreversible or regulated</strong></td><td>Payments, deletions, data export</td><td>A person initiates; the agent prepares</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="mcp">
+          <h2 id="mcp">A word on MCP</h2>
+          <p>The Model Context Protocol is an open standard for connecting agents to tools and data, and it's a genuinely useful one. It's also a supply chain. The <a href="https://modelcontextprotocol.io/specification/2025-06-18">specification itself</a> says tool descriptions should be treated as untrusted unless they come from a trusted server, and that hosts must get user consent before invoking tools.</p>
+          <p>In practice: decide which servers are allowed, scope the credentials they receive, and review what they expose before an agent can see it.</p>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the demo</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="Whose authority is the agent using?">
+              <p>An agent acting for a user shouldn't be able to do more than that user can, or more than it was delegated. Identity, permissions and audit trails all have to say who really did what, and agents must not be able to grant themselves access.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="The approval nobody reads">
+              <p>If every action needs a click, people stop reading. Approval requests have to carry the evidence and the consequence, and be rare enough to be taken seriously.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="A tool description that lies">
+              <p>Third-party tool metadata is input from someone else. A malicious or compromised description can steer the model. Treat it with the same suspicion as any other external content.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="The agent waits three days for an answer">
+              <p>Approvals take human time. The agent has to be able to suspend, survive restarts, and pick up again with the person's decision, without having lost its place.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/insights/memory/"><span>Previous</span><strong>Memory that doesn't hurt you</strong></a>
+        <a class="is-next" href="/insights/proving-it-works/"><span>Next</span><strong>Proving it works</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">What should your agent never do?</h2>
+            <p>That list is usually the best place to start designing one.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

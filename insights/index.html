@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Short, practical notes on agentic engineering from Benchmarx: what it takes to move from an impressive AI agent demo to a system you can trust in production.">
+    <title>Insights: Agentic engineering | Benchmarx</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/" aria-current="page">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="wds-site-hero wds-site-container" aria-labelledby="hero-title">
+        <p class="wds-site-eyebrow">Insights · Agentic engineering</p>
+        <h1 id="hero-title">Agents are easy to demo.<br><span>Running them is the job.</span></h1>
+        <p class="wds-site-lead">Five short pieces on what we've learned building agentic systems, and why the impressive part is usually the cheap part.</p>
+      </section>
+
+      <section class="wds-site-services" aria-label="Articles">
+        <div class="wds-site-container ins-index">
+          <ol class="ins-list">
+            <li>
+              <a class="wds-card ins-card" href="/insights/workflow-or-agent/">
+                <span class="ins-card-num">01</span>
+                <h2>Workflow, agent, or both?</h2>
+                <p>Most problems don't need an autonomous agent. How to choose the least autonomy that still does the job.</p>
+                <span class="ins-card-foot"><span>4 min read</span><span>Read <wds-icon name="arrow-up-right" size="14" aria-hidden="true"></wds-icon></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="wds-card ins-card" href="/insights/context/">
+                <span class="ins-card-num">02</span>
+                <h2>Context is the product</h2>
+                <p>Weak results are usually blamed on the model. They are usually a context problem, and context can be engineered.</p>
+                <span class="ins-card-foot"><span>4 min read</span><span>Read <wds-icon name="arrow-up-right" size="14" aria-hidden="true"></wds-icon></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="wds-card ins-card" href="/insights/memory/">
+                <span class="ins-card-num">03</span>
+                <h2>Memory that doesn't hurt you</h2>
+                <p>Remembering is the easy half. Scope, staleness, deletion and poisoning are where memory goes wrong.</p>
+                <span class="ins-card-foot"><span>4 min read</span><span>Read <wds-icon name="arrow-up-right" size="14" aria-hidden="true"></wds-icon></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="wds-card ins-card" href="/insights/tools-and-trust/">
+                <span class="ins-card-num">04</span>
+                <h2>Tools, trust and oversight</h2>
+                <p>Once an agent can act, a wrong answer becomes a wrong action. Designing the boundary between model and system.</p>
+                <span class="ins-card-foot"><span>5 min read</span><span>Read <wds-icon name="arrow-up-right" size="14" aria-hidden="true"></wds-icon></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="wds-card ins-card" href="/insights/proving-it-works/">
+                <span class="ins-card-num">05</span>
+                <h2>Proving it works</h2>
+                <p>Evaluation, tracing and cost control: the difference between an agent that worked once and one you can rely on.</p>
+                <span class="ins-card-foot"><span>5 min read</span><span>Read <wds-icon name="arrow-up-right" size="14" aria-hidden="true"></wds-icon></span></span>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="wds-site-container wds-site-section wds-site-split" aria-labelledby="why-title">
+        <div>
+          <p class="wds-site-eyebrow">Why we're sharing this</p>
+          <h2 id="why-title">The hard parts<br>aren't the visible ones.</h2>
+        </div>
+        <div class="wds-site-prose">
+          <p>Every article ends with the same section: where this gets hard. It's the list of things that tend to surprise teams after the first version works.</p>
+          <p>We keep these pieces short on purpose. Schemas, budgets, evaluation harnesses and runbooks are the work we do with clients, and they depend on your systems, your data and your risk appetite.</p>
+        </div>
+      </section>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Thinking about an agent?</h2>
+            <p>Tell us what you'd like it to do, and what would worry you if it did.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

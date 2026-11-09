@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Most problems don't need an autonomous AI agent. How to decide between a workflow, an agent, or a hybrid, and why the default should be less autonomy.">
+    <title>Workflow, agent, or both? | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/" aria-current="page">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/insights/">Insights</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">01 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Agentic engineering</p>
+        <h1>Workflow, agent, <span>or both?</span></h1>
+        <p class="ins-lead">The most useful question in agentic engineering isn't "which framework?" It's "who decides what happens next: your code, or the model?"</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">4 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="two-kinds">
+          <h2 id="two-kinds">Two kinds of system</h2>
+          <p>People use "agent" for everything from a chatbot with a search tool to a system that works unsupervised for hours. The distinction that matters is about control.</p>
+          <ul>
+            <li><strong>Workflow:</strong> you define the path in code. Models do work at each step, but the sequence is yours.</li>
+            <li><strong>Agent:</strong> the model decides the path at runtime: which tool to call, in what order, and when to stop.</li>
+          </ul>
+          <p>Most useful production systems are a third thing: a <strong>hybrid</strong>. A deterministic workflow provides the structure, and one or two bounded steps inside it are allowed to be open-ended.</p>
+        </section>
+
+        <section aria-labelledby="spectrum">
+          <h2 id="spectrum">It's a dial, not a switch</h2>
+          <figure class="ins-figure">
+            <div class="ins-spectrum">
+              <div class="ins-spectrum-axis"><span>More predictable</span><span>More flexible</span></div>
+              <div class="ins-spectrum-bar" aria-hidden="true"></div>
+              <ol class="ins-spectrum-steps">
+                <li><strong>Single call</strong><span>One prompt, good context, maybe retrieval.</span></li>
+                <li><strong>Workflow</strong><span>Fixed steps: chain, route, run in parallel, check.</span></li>
+                <li><strong>Hybrid</strong><span>Fixed process with bounded open-ended steps.</span></li>
+                <li><strong>Autonomous agent</strong><span>Model plans, acts and decides when it's done.</span></li>
+              </ol>
+            </div>
+            <figcaption>Moving right buys flexibility and costs predictability, spend control and testability.</figcaption>
+          </figure>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="when">
+          <h2 id="when">Reach for the simplest thing that works</h2>
+          <div class="wds-table-wrap">
+            <table class="wds-table">
+              <thead>
+                <tr><th>Pattern</th><th>A good fit when</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Single call</strong></td><td>The task is one step and quality is mostly a context problem.</td></tr>
+                <tr><td><strong>Workflow</strong></td><td>You know the steps in advance and need audit trails and predictable cost.</td></tr>
+                <tr><td><strong>Hybrid</strong></td><td>The process is fixed, but a step such as investigation or code change is genuinely open-ended.</td></tr>
+                <tr><td><strong>Autonomous agent</strong></td><td>The path can't be predicted, mistakes are recoverable, and you can afford to supervise.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Autonomy trades latency, cost and predictability for flexibility. That's worth paying for sometimes, but it should be a decision with evidence behind it, not a starting assumption.</p>
+          <div class="ins-callout">
+            <p><strong>A rule we use:</strong> add a pattern only when the simpler form demonstrably fails. Every extra loop, reviewer or sub-agent is another thing to pay for, test and debug.</p>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="loops">
+          <h2 id="loops">Where agents do earn their keep</h2>
+          <p>Some work really can't be mapped in advance. Investigating an incident, or changing an unknown number of files in a codebase, depends on what the previous step found. Here, letting the model direct the process beats any fixed script.</p>
+          <p>Even then, the model should never be the only thing in charge. It works inside limits that your code enforces: step caps, spend caps, permitted tools, and a defined point at which it hands over to a person.</p>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the demo</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="The agent that loops until the budget is gone">
+              <p>Every loop needs ceilings on steps, spend and retries, and a planned fallback for when it hits them: trim context, cut depth, switch to a cheaper model, or ask a person. Cost is a design constraint, not a bill you read afterwards.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="A step fails halfway through">
+              <p>Do you retry, resume or undo? That depends on state that survives a crash and on actions that are safe to repeat. It is ordinary distributed-systems work, and it is easy to forget when the exciting part is the model.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Five agents, one wrong answer">
+              <p>Splitting work across agents adds coordination failures. When the final answer is wrong you need to know which agent was responsible, and whether splitting the work was ever worth it.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Picking the framework before the problem">
+              <p>Frameworks make the first version fast and can hide the prompts and decisions underneath. If nobody on the team can explain what is actually sent to the model, nobody can debug it.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-next" href="/insights/context/"><span>Next</span><strong>Context is the product</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Not sure how much autonomy you need?</h2>
+            <p>That's usually the best place to start. Tell us the task and we'll tell you the least complicated way to do it.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>
