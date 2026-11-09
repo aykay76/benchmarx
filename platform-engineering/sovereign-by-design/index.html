@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Owning your tools, cloud and telemetry only means something if you could move them. Sovereignty as an engineering property: data, access, dependencies and exit.">
+    <title>Sovereign by design | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/platform-engineering/">Platform engineering</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">03 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Platform engineering</p>
+        <h1>Sovereign <span>by design.</span></h1>
+        <p class="ins-lead">Your tools, your cloud, your telemetry only mean something if you could actually move them. Sovereignty is an engineering property, not a marketing word.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">5 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section aria-labelledby="questions">
+          <h2 id="questions">Four honest questions</h2>
+          <div class="ins-grid ins-grid--pair">
+            <div class="wds-card"><div class="wds-card-body"><h3>Where does the data live?</h3><p>Not just the primary store: backups, logs, caches and telemetry too.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Who can access it?</h3><p>Including the operator of the service, and anyone they delegate to.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>What do we depend on?</h3><p>Every service, SDK and licence that would stop working if a supplier changed course.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>How hard is it to leave?</h3><p>Hard to answer in theory. Much easier if you've rehearsed it.</p></div></div>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="portable">
+          <h2 id="portable">Portability comes from boundaries</h2>
+          <p>The most practical route to sovereignty is to build on open, widely implemented interfaces, so that any individual component can be replaced without rewriting everything around it. Container images, the Kubernetes API, OpenTelemetry, standard SQL databases and infrastructure as code are all examples.</p>
+          <p>The aim isn't to avoid every proprietary service. It's to know where you've accepted one, why, and what it would cost to unpick.</p>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="tradeoffs">
+          <h2 id="tradeoffs">Control has a price</h2>
+          <p>More control means more responsibility. It's a trade-off, not a virtue, and the right answer differs by component.</p>
+          <div class="wds-table-wrap">
+            <table class="wds-table">
+              <thead>
+                <tr><th>Approach</th><th>You gain</th><th>You pay</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Fully managed SaaS</strong></td><td>Speed, no operations</td><td>Least control, highest dependency</td></tr>
+                <tr><td><strong>Managed services in your own account</strong></td><td>Control of data and access, less toil</td><td>Some provider lock-in, configuration work</td></tr>
+                <tr><td><strong>Self-hosted open source</strong></td><td>Most control, easiest to move</td><td>You run it: patching, upgrades, on-call</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ins-callout">
+            <p><strong>Sovereignty isn't all or nothing.</strong> Decide component by component what you must control and what you're happy to rent, and write the reasoning down.</p>
+          </div>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the launch</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="Dependencies you didn't know you had">
+              <p>The identity provider, the CI service, the licence server, the SDK that quietly phones home. A real dependency map nearly always turns up surprises, and it's much cheaper to draw before you need it.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="An exit you've never rehearsed">
+              <p>An exit plan nobody has tested is a hope. Rehearsing even a partial move shows what depends on what, and how long it would genuinely take.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Operating what you own">
+              <p>Self-hosting moves cost from the invoice to the team: upgrades, security patches, capacity, on-call. Make sure that cost is planned and staffed, not discovered.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Requirements move">
+              <p>Residency and sector rules differ by region and change over time. Designing for configurable boundaries is safer than hard-coding today's reading of them.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/platform-engineering/golden-paths/"><span>Previous</span><strong>Golden paths, not gates</strong></a>
+        <a class="is-next" href="/platform-engineering/secure-by-default/"><span>Next</span><strong>Secure and compliant by default</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">What must you always control?</h2>
+            <p>Start with that list, and we can work out what it implies for the rest.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

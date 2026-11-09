@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Security that relies on every team remembering fails under pressure. How a developer platform can make secure and compliant the default, and where that gets hard.">
+    <title>Secure and compliant by default | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/platform-engineering/">Platform engineering</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">04 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Platform engineering</p>
+        <h1>Secure and compliant <span>by default.</span></h1>
+        <p class="ins-lead">Security that relies on every team remembering fails on a busy Friday. A platform can carry the controls, so the safe route is also the default one.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">5 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="move">
+          <h2 id="move">Move the controls into the path</h2>
+          <p>When each team implements security for itself, the result is uneven: some do it well, some do it late, and some skip it when the deadline is close. When the controls live in the platform, every service on the path gets them without having to ask.</p>
+          <figure class="ins-figure">
+            <ol class="ins-stack">
+              <li><strong>Commit</strong><span>Secret scanning, branch protection, required review</span></li>
+              <li><strong>Build</strong><span>Dependency and code scanning, software bill of materials</span></li>
+              <li><strong>Artifact</strong><span>Signed images with a record of how they were built</span></li>
+              <li class="is-key"><strong>Deploy</strong><span>Policy as code: unsafe configurations don't get through</span></li>
+              <li><strong>Run</strong><span>Least-privilege workload identity, network defaults, audit logs</span></li>
+            </ol>
+            <figcaption>Each stage checks the one before it, so one missed control doesn't become an incident.</figcaption>
+          </figure>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="identity">
+          <h2 id="identity">Fewer secrets, shorter lives</h2>
+          <p>The most effective habit is to remove long-lived credentials altogether. Workloads should prove who they are to the systems they call, using short-lived, automatically issued identities, rather than carrying keys that can leak into logs, images and chat.</p>
+          <p>Where secrets can't be avoided, they should live in one governed place, be scoped to one purpose, and rotate without anyone's weekend.</p>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="evidence">
+          <h2 id="evidence">Evidence as a by-product</h2>
+          <p>Auditors and regulators want proof that controls operated, not a promise. If delivery runs through a platform, much of that evidence can be produced automatically: who approved what, which checks ran, what was deployed and when.</p>
+          <div class="ins-callout">
+            <p><strong>Compliance evidence should fall out of how software is delivered,</strong> not be assembled in a scramble once a year.</p>
+          </div>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the launch</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="Thousands of findings, nobody owning them">
+              <p>Scanners are easy to switch on and hard to live with. Without clear severity, ownership and a way to say "accepted risk", teams learn to ignore the noise, including the findings that matter.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="A policy blocks a good deploy at 2am">
+              <p>Policies need tests, a trial period in audit mode before they enforce, and error messages that tell a developer what to fix. A control people can't understand becomes a control people disable.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Emergencies need a way through">
+              <p>Sometimes the right call is to bypass a control. Design that route in advance, with strong audit and a review afterwards, rather than letting people invent one during an incident.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Dependencies you didn't write">
+              <p>Most of what runs in production came from somewhere else. Knowing what you ship, and being able to act quickly when a vulnerability is announced, depends on the groundwork being done beforehand.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/platform-engineering/sovereign-by-design/"><span>Previous</span><strong>Sovereign by design</strong></a>
+        <a class="is-next" href="/platform-engineering/run-and-measure/"><span>Next</span><strong>Running it, and proving it helps</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">How much depends on people remembering?</h2>
+            <p>Each manual step is a place where security quietly depends on a good day. We can help find them and replace them.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

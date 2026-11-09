@@ -42,6 +42,20 @@
   margin-top: auto;
 }
 
+.wds-site-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wds-space-sm);
+  width: 100%;
+  margin-top: auto;
+}
+
+.wds-site-card-foot .wds-site-inline-link,
+.wds-site-card-foot .wds-badge {
+  margin-top: 0;
+}
+
 /* Layout */
 .ins-narrow {
   width: min(calc(100% - var(--wds-space-3xl)), calc(var(--wds-container-max) * 0.65));

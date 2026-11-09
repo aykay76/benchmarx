@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An internal developer platform nobody chose to use is just infrastructure with a roadmap. Why platform teams should think like product teams, and where it gets hard.">
+    <title>Treat the platform as a product | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/platform-engineering/">Platform engineering</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">01 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Platform engineering</p>
+        <h1>Treat the platform <span>as a product.</span></h1>
+        <p class="ins-lead">An internal platform that nobody chose to use is just infrastructure with a roadmap. The platforms that last treat developers as customers, and adoption as the measure of success.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">4 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="fail">
+          <h2 id="fail">Two ways platforms go wrong</h2>
+          <p>Platforms that are run as projects tend to fail in one of two directions.</p>
+          <ul>
+            <li><strong>The ticket queue.</strong> Every change goes through the platform team, who become the bottleneck they were created to remove.</li>
+            <li><strong>The ivory tower.</strong> A technically impressive system designed from the architecture down, and then mandated, rather than designed from the developer's problem up.</li>
+          </ul>
+          <p>Both come from the same root: nobody asked who the customers are and what is actually slowing them down.</p>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="loop">
+          <h2 id="loop">Start with friction, grow from evidence</h2>
+          <p>A useful rule is to build the thinnest platform that removes the most painful friction, and let usage tell you what to build next.</p>
+          <figure class="ins-figure">
+            <ol class="ins-flow">
+              <li class="ins-flow-step"><strong>Find the friction</strong><span>Watch teams work. Count the waiting and the workarounds.</span></li>
+              <li class="ins-flow-step"><strong>Ship the thinnest useful thing</strong><span>Small enough to land in weeks, not quarters.</span></li>
+              <li class="ins-flow-step"><strong>Make it the easy path</strong><span>Better than what teams already do, with no ticket required.</span></li>
+              <li class="ins-flow-step"><strong>Measure adoption and outcomes</strong><span>Are teams choosing it, and are they delivering faster?</span></li>
+              <li class="ins-flow-step"><strong>Improve or retire</strong><span>Grow what's used. Remove what isn't.</span></li>
+            </ol>
+            <figcaption>Platform work never finishes. It's a loop, and the evidence from the last pass decides the next one.</figcaption>
+          </figure>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="mindset">
+          <h2 id="mindset">Project thinking versus product thinking</h2>
+          <div class="wds-table-wrap">
+            <table class="wds-table">
+              <thead>
+                <tr><th></th><th>As a project</th><th>As a product</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Success is</strong></td><td>Scope delivered</td><td>Teams choosing it, and getting faster</td></tr>
+                <tr><td><strong>Users</strong></td><td>Told to adopt it</td><td>Choose to adopt it</td></tr>
+                <tr><td><strong>The roadmap comes from</strong></td><td>The target architecture</td><td>Observed developer friction</td></tr>
+                <tr><td><strong>Support looks like</strong></td><td>A queue of tickets</td><td>Self-service, docs and a feedback loop</td></tr>
+                <tr><td><strong>Ownership ends</strong></td><td>At launch</td><td>Never, until it's retired</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ins-callout">
+            <p><strong>If teams have to be ordered to use it, the platform hasn't yet earned its place.</strong> Mandates can follow adoption. They shouldn't be a substitute for it.</p>
+          </div>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the launch</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="Your hardest customers are the sceptics">
+              <p>Early adopters forgive rough edges. The mainstream teams compare you with whatever they already have, and they're right to. Winning them means reliability, good documentation and an honest migration story, not enthusiasm.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Every team wants an exception">
+              <p>Each exception is reasonable, and each one erodes the standard that makes the platform valuable. You need principled ways to deviate, and clarity about what a team takes on when it does.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="The platform team becomes the bottleneck">
+              <p>If common changes need a person on the platform team, you've rebuilt the ticket queue. Self-service takes real investment in interfaces, defaults and documentation, and it's what lets the team scale without growing in proportion.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Funding a product like a project">
+              <p>Budgets and headcount tied to a delivery date make it hard to staff the long tail: support, upgrades and deprecations. A platform needs a standing team and an owner for as long as it exists.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-next" href="/platform-engineering/golden-paths/"><span>Next</span><strong>Golden paths, not gates</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Where do your teams lose time?</h2>
+            <p>That's the best place to start. Tell us what you've seen and we'll help you work out what a platform should do about it.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

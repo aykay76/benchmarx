@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A developer platform is a service with customers. Running it with objectives and telemetry, and proving it improves delivery, rather than counting tickets closed.">
+    <title>Running it, and proving it helps | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/platform-engineering/">Platform engineering</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">05 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Platform engineering</p>
+        <h1>Running it, <span>and proving it helps.</span></h1>
+        <p class="ins-lead">A platform is a service with customers. It needs the same things as any service: objectives, telemetry and someone on the hook. And it needs evidence that delivery is actually getting better.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">5 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="service">
+          <h2 id="service">Hold the platform to a service standard</h2>
+          <p>If a team's release depends on your pipeline, then your pipeline's reliability is their reliability. The platform should have its own objectives, such as how often builds succeed and how long it takes to provision an environment. It should also have an on-call rota, incident reviews and honest status communication.</p>
+          <p>Teams forgive a platform that is sometimes down. They don't forgive one that is down without telling them.</p>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="telemetry">
+          <h2 id="telemetry">Telemetry you own, from day one</h2>
+          <p>The paved path should emit logs, metrics and traces by default, using open standards such as OpenTelemetry, and send them to backends you control. That gives every service a baseline view without anyone instrumenting it by hand, and it keeps your operational data portable.</p>
+          <p>It also needs discipline. Telemetry has a cost, and unbounded detail can end up costing more than the system it describes.</p>
+        </section>
+
+        <section aria-labelledby="value">
+          <h2 id="value">Prove the value</h2>
+          <div class="ins-grid ins-grid--pair">
+            <div class="wds-card"><div class="wds-card-body"><h3>Speed</h3><p>Lead time for changes, and how long a new service takes to reach production for the first time.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Stability</h3><p>Change failure rate, and how quickly teams recover when something breaks.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Adoption</h3><p>How many services use the path, and how many chose to rather than being told to.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Developer experience</h3><p>How teams feel about the platform, and how much time still goes on toil.</p></div></div>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="outcomes">
+          <h2 id="outcomes">Measure outcomes for teams</h2>
+          <div class="ins-callout">
+            <p><strong>Tickets closed and features shipped measure the platform team's activity.</strong> The question that matters is whether the teams it serves are delivering faster and more safely than before.</p>
+          </div>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the launch</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="Metrics turn into targets">
+              <p>Once a number is used to judge people, it gets gamed. Treat delivery metrics as prompts for conversation with the teams concerned, and read them alongside what those teams actually say.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="You have no baseline">
+              <p>It's hard to show improvement if you never measured the "before". Capturing where teams started, even roughly, is one of the cheapest and most valuable things you can do early.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Who pays for shared infrastructure?">
+              <p>Shared platforms blur cost. Without sensible allocation and defaults that prevent waste, such as idle environments left running, spend grows quietly and the platform becomes the easy target in a budget review.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Keeping hundreds of services current">
+              <p>Every platform change eventually has to reach every consumer. Treat breaking changes like a product release, with migration help and a realistic deprecation timeline, or you'll accumulate a long tail of unsupported versions.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/platform-engineering/secure-by-default/"><span>Previous</span><strong>Secure and compliant by default</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">Can you show it's working?</h2>
+            <p>If not yet, that's a good first project. We can help set up the measures before the platform needs defending.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-wds-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The best developer platforms make the right thing the easiest thing. What a golden path is, what it needs, and why keeping it healthy is harder than building it.">
+    <title>Golden paths, not gates | Benchmarx Insights</title>
+    <script>
+      const savedTheme = localStorage.getItem("benchmarx-theme") || localStorage.getItem("wds-theme");
+      const initialTheme = savedTheme === "dark" ? "dark" : "light";
+      document.documentElement.setAttribute("data-wds-theme", initialTheme);
+    </script>
+    <link rel="stylesheet" href="/wds/wds.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/insights.css">
+    <script type="module" src="/wds/wds.js"></script>
+    <script type="module" src="/js/app.js"></script>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yirbikdn8m");
+    </script>
+  </head>
+  <body id="top">
+    <a class="wds-site-skip" href="#main">Skip to content</a>
+    <header class="wds-site-header wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <nav class="wds-site-nav" aria-label="Main navigation">
+        <a href="/#platform">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/insights/">Insights</a>
+        <a href="/#about">About</a>
+      </nav>
+      <div class="wds-site-header-actions">
+        <button class="wds-btn wds-btn--ghost wds-btn--icon" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="wds-btn wds-btn--secondary" href="/#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="ins-narrow ins-header">
+        <nav class="ins-crumbs" aria-label="Breadcrumb">
+          <a href="/platform-engineering/">Platform engineering</a>
+          <wds-icon name="chevron-right" size="12" aria-hidden="true"></wds-icon>
+          <span aria-current="page">02 of 05</span>
+        </nav>
+        <p class="wds-site-eyebrow">Platform engineering</p>
+        <h1>Golden paths, <span>not gates.</span></h1>
+        <p class="ins-lead">The best platforms don't stop people doing the wrong thing. They make the right thing the easiest thing, so that following the standard is also the quickest route.</p>
+        <p class="ins-meta"><span class="wds-badge wds-badge--neutral">4 min read</span></p>
+      </header>
+
+      <article class="ins-narrow ins-article">
+        <section class="ins-prose" aria-labelledby="what">
+          <h2 id="what">What a golden path is</h2>
+          <p>A golden path is an opinionated, supported route from an idea to software running in production. It bundles the decisions most teams would otherwise make, and remake, for themselves: how to structure a repository, build and test, ship, observe and operate.</p>
+          <p>It is a path, not a fence. Teams can step off it, but the path should be good enough that few want to.</p>
+        </section>
+
+        <section aria-labelledby="route">
+          <h2 id="route">From idea to production</h2>
+          <figure class="ins-figure">
+            <ol class="ins-flow">
+              <li class="ins-flow-step"><strong>Scaffold</strong><span>A working service from a template, in minutes.</span></li>
+              <li class="ins-flow-step"><strong>Build and test</strong><span>Pipelines that already exist and already work.</span></li>
+              <li class="ins-flow-step"><strong>Check and sign</strong><span>Security and quality checks run without being asked.</span></li>
+              <li class="ins-flow-step"><strong>Deploy</strong><span>Self-service, repeatable, and easy to roll back.</span></li>
+              <li class="ins-flow-step"><strong>Observe</strong><span>Logs, metrics and traces wired in from day one.</span></li>
+              <li class="ins-flow-step"><strong>Operate</strong><span>Ownership, runbooks and on-call, ready from the start.</span></li>
+            </ol>
+            <figcaption>The value is in the whole route being connected. Any single step is easy to build; stitching them together is the product.</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="principles">
+          <h2 id="principles">Three properties that make it work</h2>
+          <div class="ins-grid">
+            <div class="wds-card"><div class="wds-card-body"><h3>Good defaults</h3><p>The compliant, supportable choice is already made, and it's the one teams get without thinking.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Self-service</h3><p>No ticket, no waiting for a person. If it needs a human to say yes, it's a gate.</p></div></div>
+            <div class="wds-card"><div class="wds-card-body"><h3>Honest escape hatches</h3><p>Teams can leave the path with a clear understanding that they now own what they leave.</p></div></div>
+          </div>
+        </section>
+
+        <section class="ins-prose" aria-labelledby="gates">
+          <h2 id="gates">Gates have their place</h2>
+          <p>Some things really are non-negotiable, such as access to production data or changes that affect other teams. Those can be enforced. But a platform made mostly of gates turns developers into applicants, and teams will route around anything that treats them that way.</p>
+          <div class="ins-callout">
+            <p><strong>A useful test:</strong> would a team choose this route if nobody made them? If not, fix the route before adding enforcement.</p>
+          </div>
+        </section>
+
+        <section class="ins-hard" aria-labelledby="hard-title">
+          <p class="wds-site-eyebrow">Where this gets hard</p>
+          <h2 id="hard-title">What surprises teams after the launch</h2>
+          <wds-accordion>
+            <wds-accordion-item heading="Templates drift">
+              <p>A template copied two years ago is now a fork. The harder question is how improvements reach the services that already exist, without breaking them and without relying on every team to notice.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Too opinionated, or not enough">
+              <p>Too rigid and teams leave, building shadow platforms of their own. Too loose and you've provided no leverage. Finding the right level takes evidence from real teams, and it will move over time.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Day two is the real work">
+              <p>Scaffolding a service is the easy day. Upgrading, migrating and deprecating across hundreds of services over years is where platforms succeed or quietly decay.</p>
+            </wds-accordion-item>
+            <wds-accordion-item heading="Documentation that rots">
+              <p>Docs that were right at launch won't stay right unless they live next to the code, are tested like code, and have someone responsible for them.</p>
+            </wds-accordion-item>
+          </wds-accordion>
+        </section>
+      </article>
+
+      <nav class="ins-narrow ins-pager" aria-label="More insights">
+        <a class="is-prev" href="/platform-engineering/product-thinking/"><span>Previous</span><strong>Treat the platform as a product</strong></a>
+        <a class="is-next" href="/platform-engineering/sovereign-by-design/"><span>Next</span><strong>Sovereign by design</strong></a>
+      </nav>
+
+      <section class="wds-site-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wds-site-container wds-site-section wds-site-contact-layout">
+          <div>
+            <p class="wds-site-eyebrow">Start a conversation</p>
+            <h2 id="contact-title">How long does a new service take?</h2>
+            <p>From idea to production, for a team that's done it before. The answer usually shows where the path needs work.</p>
+          </div>
+          <a class="wds-btn wds-btn--primary wds-btn--lg" href="mailto:inbox@benchmarx.co.uk">inbox@benchmarx.co.uk <wds-icon name="arrow-up-right" aria-hidden="true"></wds-icon></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wds-site-footer wds-site-container">
+      <a class="wds-site-brand" href="/" aria-label="Benchmarx home">benchmarx<span aria-hidden="true">.</span></a>
+      <p>Software, with intent.</p>
+      <span>&copy; <span id="current-year">2026</span> Benchmarx</span>
+    </footer>
+  </body>
+</html>
